@@ -1,0 +1,10 @@
+0.6252 	WARNING 	Movie2 stim could not be imported and won't be available
+5.7504 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([ 0.,  0.,  0.]), colorSpace='rgb', fullscr=UNKNOWN, gamma=None, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor instance at 0xaadafd0>, name='window1', pos=[0, 0], screen=0, size=array([1440,  900]), stereo=False, units=u'norm', useFBO=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+5.7504 	EXP 	window1: recordFrameIntervals = False
+5.9162 	EXP 	window1: recordFrameIntervals = True
+6.1007 	EXP 	window1: recordFrameIntervals = False
+6.3304 	EXP 	Created Instructions = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=u'white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font=u'Arial', fontFiles=[], height=0.1, italic=False, name='Instructions', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1)
+6.3310 	EXP 	window1: recordFrameIntervals = False
+6.3514 	EXP 	Instructions: autoDraw = True
+6.3517 	EXP 	window1: recordFrameIntervals = False
+7.7416 	DATA 	Keypress: space

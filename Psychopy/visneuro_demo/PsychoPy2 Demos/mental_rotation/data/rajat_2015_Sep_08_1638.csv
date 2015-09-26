@@ -1,0 +1,4 @@
+angle,leftori,rightori,same,trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,key_resp_4.keys,key_resp_4.rt,Response.keys,Response.corr,Response.rt,date,frameRate,expName,session,participant,
+,,,,,,,,m,4.2639194454,,,,2015_Sep_08_1638,60.0730934563,MentalRot,001,rajat,
+45,0,45,y,0,0,0,3,,,n,1,1.05186300578,2015_Sep_08_1638,60.0730934563,MentalRot,001,rajat,
+135,0,135,n,0,1,1,6,,,n,0,0.927711290147,2015_Sep_08_1638,60.0730934563,MentalRot,001,rajat,

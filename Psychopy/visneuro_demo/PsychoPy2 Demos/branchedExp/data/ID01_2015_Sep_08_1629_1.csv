@@ -1,0 +1,5 @@
+letterColor,repsA.thisRepN,repsA.thisTrialN,repsA.thisN,repsA.thisIndex,repsB.thisRepN,repsB.thisTrialN,repsB.thisN,repsB.thisIndex,resp.keys,resp.rt,date,frameRate,expName,session,participant,
+,,,,,,,,,a,4.34194587998,2015_Sep_08_1629,59.9442109112,branching,1,ID01,
+green,0,0,0,1,,,,,,,2015_Sep_08_1629,59.9442109112,branching,1,ID01,
+blue,0,1,1,2,,,,,,,2015_Sep_08_1629,59.9442109112,branching,1,ID01,
+red,0,2,2,0,,,,,,,2015_Sep_08_1629,59.9442109112,branching,1,ID01,

@@ -1,0 +1,82 @@
+5.6776 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([ 0.,  0.,  0.]), colorSpace='rgb', fullscr=UNKNOWN, gamma=None, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor instance at 0x04DCB5A8>, name='window1', pos=[440, 140], screen=0, size=array([1040,  800]), stereo=False, units='height', useFBO=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+5.6777 	EXP 	window1: recordFrameIntervals = False
+5.8428 	EXP 	window1: recordFrameIntervals = True
+6.0258 	EXP 	window1: recordFrameIntervals = False
+6.1869 	EXP 	Created text_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, name='text_4', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 0.,  0.,  0.]), text=unicode(...), units='height', win=Window(...), wrapWidth=0.8)
+6.1920 	EXP 	Created image_L_3 = ImageStim(autoLog=True, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask='raisedCos', maskParams=None, name='image_L_3', opacity=1.0, ori=1.0, pos=array([-0.25,  0.2 ]), size=array([ 0.3,  0.3]), texRes=128, units='height', win=Window(...))
+6.1953 	EXP 	Created image_R_3 = ImageStim(autoLog=True, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask='raisedCos', maskParams=None, name='image_R_3', opacity=1.0, ori=1.0, pos=array([ 0.25,  0.2 ]), size=array([ 0.3,  0.3]), texRes=128, units='height', win=Window(...))
+6.2475 	EXP 	Created text_5 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, name='text_5', opacity=1.0, ori=0, pos=array([ 0. , -0.2]), rgb=array([ 0.,  0.,  0.]), text=unicode(...), units='height', win=Window(...), wrapWidth=0.8)
+6.2521 	EXP 	Created mini_pause_2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, name='mini_pause_2', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=u' +', units='height', win=Window(...), wrapWidth=1)
+6.2557 	EXP 	Created image_L = ImageStim(autoLog=True, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask='raisedCos', maskParams=None, name='image_L', opacity=1.0, ori=1.0, pos=array([-0.25,  0.  ]), size=array([ 0.3,  0.3]), texRes=128, units='height', win=Window(...))
+6.2592 	EXP 	Created image_R = ImageStim(autoLog=True, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask='raisedCos', maskParams=None, name='image_R', opacity=1.0, ori=1.0, pos=array([ 0.25,  0.  ]), size=array([ 0.3,  0.3]), texRes=128, units='height', win=Window(...))
+6.2772 	EXP 	Created text = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.03, italic=False, name='text', opacity=1.0, ori=0, pos=array([ 0. , -0.3]), rgb=array([ 0.,  0.,  0.]), text=unicode(...), units='height', win=Window(...), wrapWidth=1)
+6.2832 	EXP 	Created trial_count = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.03, italic=False, name='trial_count', opacity=1.0, ori=0, pos=array([ 0.4, -0.4]), rgb=array([ 0.,  0.,  0.]), text=u'default text', units='height', win=Window(...), wrapWidth=1)
+6.2884 	EXP 	Created mini_pause = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='mini_pause', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=u' ', units='height', win=Window(...), wrapWidth=1)
+6.2954 	EXP 	Created text_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, name='text_3', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 0.,  0.,  0.]), text=unicode(...), units='height', win=Window(...), wrapWidth=1)
+6.7014 	EXP 	window1: recordFrameIntervals = False
+6.7066 	EXP 	text_4: autoDraw = True
+6.7067 	EXP 	window1: recordFrameIntervals = False
+10.9649 	DATA 	Keypress: m
+11.0100 	EXP 	text_4: autoDraw = False
+11.0100 	EXP 	image_L_3: ori = 0.0
+11.0100 	EXP 	image_L_3: image = 'FR.png'
+11.0100 	EXP 	image_R_3: ori = -90.0
+11.0100 	EXP 	image_R_3: image = 'F.png'
+11.0100 	EXP 	image_L_3: autoDraw = True
+11.0100 	EXP 	image_R_3: autoDraw = True
+11.0100 	EXP 	text_5: autoDraw = True
+12.4660 	DATA 	Keypress: n
+12.4820 	EXP 	image_L_3: autoDraw = False
+12.4820 	EXP 	image_R_3: autoDraw = False
+12.4820 	EXP 	text_5: autoDraw = False
+12.4820 	EXP 	mini_pause_2: autoDraw = True
+13.9717 	EXP 	Imported MentalRot.csv as conditions, 16 conditions, 4 params
+13.9734 	EXP 	Created sequence: random, trialTypes=16, nReps=6, seed=None
+13.9756 	EXP 	New trial (rep=0, index=0): {'angle': 45, 'leftori': 0, 'rightori': 45, 'same': 'y'}
+14.0048 	EXP 	mini_pause_2: autoDraw = False
+14.0048 	EXP 	image_L: ori = 0.0
+14.0048 	EXP 	image_L: image = 'FR.png'
+14.0048 	EXP 	image_R: ori = 45.0
+14.0048 	EXP 	image_R: image = 'FR.png'
+14.0048 	EXP 	trial_count: text = 0
+14.0048 	EXP 	image_L: autoDraw = True
+14.0048 	EXP 	image_R: autoDraw = True
+14.0048 	EXP 	text: autoDraw = True
+14.0048 	EXP 	trial_count: autoDraw = True
+15.0515 	DATA 	Keypress: n
+15.0678 	EXP 	image_L: autoDraw = False
+15.0678 	EXP 	image_R: autoDraw = False
+15.0678 	EXP 	text: autoDraw = False
+15.0678 	EXP 	trial_count: autoDraw = False
+15.0678 	EXP 	mini_pause: autoDraw = True
+15.5534 	EXP 	New trial (rep=0, index=1): {'angle': 135, 'leftori': 0, 'rightori': 135, 'same': 'n'}
+15.5824 	EXP 	mini_pause: autoDraw = False
+15.5824 	EXP 	mini_pause: autoDraw = False
+15.5824 	EXP 	image_L: ori = 0.0
+15.5824 	EXP 	image_L: image = 'F.png'
+15.5824 	EXP 	image_R: ori = 135.0
+15.5824 	EXP 	image_R: image = 'FR.png'
+15.5824 	EXP 	trial_count: text = 1
+15.5824 	EXP 	image_L: autoDraw = True
+15.5824 	EXP 	image_R: autoDraw = True
+15.5824 	EXP 	text: autoDraw = True
+15.5824 	EXP 	trial_count: autoDraw = True
+16.4878 	DATA 	Keypress: n
+16.5193 	EXP 	image_L: autoDraw = False
+16.5193 	EXP 	image_R: autoDraw = False
+16.5193 	EXP 	text: autoDraw = False
+16.5193 	EXP 	trial_count: autoDraw = False
+16.5193 	EXP 	mini_pause: autoDraw = True
+17.0049 	EXP 	New trial (rep=0, index=2): {'angle': 270, 'leftori': 0, 'rightori': 270, 'same': 'y'}
+17.0343 	EXP 	mini_pause: autoDraw = False
+17.0343 	EXP 	mini_pause: autoDraw = False
+17.0343 	EXP 	image_L: ori = 0.0
+17.0343 	EXP 	image_L: image = 'F.png'
+17.0343 	EXP 	image_R: ori = 270.0
+17.0343 	EXP 	image_R: image = 'F.png'
+17.0343 	EXP 	trial_count: text = 2
+17.0343 	EXP 	image_L: autoDraw = True
+17.0343 	EXP 	image_R: autoDraw = True
+17.0343 	EXP 	text: autoDraw = True
+17.0343 	EXP 	trial_count: autoDraw = True
+19.2899 	DATA 	Keypress: escape

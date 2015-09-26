@@ -1,0 +1,430 @@
+7.1933 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([-1., -1., -1.]), colorSpace='rgb', fullscr=UNKNOWN, gamma=None, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor instance at 0x047C6648>, name='window1', pos=[0, 0], screen=0, size=array([1920, 1080]), stereo=False, units=u'norm', useFBO=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+7.1933 	EXP 	window1: recordFrameIntervals = False
+7.3581 	EXP 	window1: recordFrameIntervals = True
+7.5421 	EXP 	window1: recordFrameIntervals = False
+7.7273 	EXP 	Created Instr = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, name='Instr', opacity=1.0, ori=0, pos=array([ 0.03,  0.  ]), rgb=array([ 255.,  255.,  255.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1.2)
+7.8026 	EXP 	Created Instr_1x = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, name='Instr_1x', opacity=1.0, ori=0, pos=array([ 0.03,  0.  ]), rgb=array([ 255.,  255.,  255.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1.2)
+7.8130 	EXP 	Created Instr_Creat_1 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Creat_1', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+7.8182 	EXP 	Created Instr_Prac_1 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Prac_1', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+7.8213 	EXP 	Created Creative = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Creative', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+7.8246 	EXP 	Created Practical = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Practical', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+7.8338 	EXP 	Created Word_1 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Word_1', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 1.,  1.,  1.]), text=u'default text', units=u'norm', win=Window(...), wrapWidth=1)
+7.8389 	EXP 	Created Wrong_1 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Wrong_1', opacity=1.0, ori=0, pos=array([ 0. , -0.3]), rgb=array([ 255.,    0.,    0.]), text=u'X', units=u'norm', win=Window(...), wrapWidth=1)
+7.8879 	EXP 	Created Instru2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, name='Instru2', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1.2)
+7.8919 	EXP 	Created Instr_Bad = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Bad', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([  50.,  205.,   50.]), text=u'Bad', units=u'norm', win=Window(...), wrapWidth=1)
+7.8967 	EXP 	Created Instr_Good = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Good', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([  50.,  205.,   50.]), text=u'Good', units=u'norm', win=Window(...), wrapWidth=1)
+7.8995 	EXP 	Created Bad = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Bad', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([  50.,  205.,   50.]), text=u'Bad', units=u'norm', win=Window(...), wrapWidth=1)
+7.9024 	EXP 	Created Good = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Good', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([  50.,  205.,   50.]), text=u'Good', units=u'norm', win=Window(...), wrapWidth=1)
+7.9084 	EXP 	Created Word_2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Word_2', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 1.,  1.,  1.]), text=u'default text', units=u'norm', win=Window(...), wrapWidth=1)
+7.9106 	EXP 	Created Wrong_2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Wrong_2', opacity=1.0, ori=0, pos=array([ 0. , -0.3]), rgb=array([ 255.,    0.,    0.]), text=u'X', units=u'norm', win=Window(...), wrapWidth=1)
+7.9591 	EXP 	Created Instr3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, name='Instr3', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1.2)
+7.9623 	EXP 	Created Instr_Creat_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Creat_3', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+7.9655 	EXP 	Created Instr_or_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Instr_or_3', opacity=1.0, ori=0, pos=array([-0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+7.9684 	EXP 	Created Instr_Bad_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Bad_3', opacity=1.0, ori=0, pos=array([-0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Bad', units=u'norm', win=Window(...), wrapWidth=1)
+7.9714 	EXP 	Created Instr_Prac_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Prac_3', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+7.9736 	EXP 	Created Instr_or_3_2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Instr_or_3_2', opacity=1.0, ori=0, pos=array([ 0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+7.9765 	EXP 	Created Instr_Good_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Good_3', opacity=1.0, ori=0, pos=array([ 0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Good', units=u'norm', win=Window(...), wrapWidth=1)
+7.9795 	EXP 	Created Creative_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Creative_3', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+7.9818 	EXP 	Created or_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='or_3', opacity=1.0, ori=0, pos=array([-0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+7.9845 	EXP 	Created Bad_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Bad_3', opacity=1.0, ori=0, pos=array([-0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Bad', units=u'norm', win=Window(...), wrapWidth=1)
+7.9875 	EXP 	Created Practical_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Practical_3', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+7.9898 	EXP 	Created or_2_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='or_2_3', opacity=1.0, ori=0, pos=array([ 0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+7.9927 	EXP 	Created Good_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Good_3', opacity=1.0, ori=0, pos=array([ 0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Good', units=u'norm', win=Window(...), wrapWidth=1)
+7.9985 	EXP 	Created Word_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Word_3', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 1.,  1.,  1.]), text=u'default text', units=u'norm', win=Window(...), wrapWidth=1)
+8.0005 	EXP 	Created Wrong_3 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-10.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Wrong_3', opacity=1.0, ori=0, pos=array([ 0. , -0.3]), rgb=array([ 255.,    0.,    0.]), text=u'X', units=u'norm', win=Window(...), wrapWidth=1)
+8.0140 	EXP 	Created Instr4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, name='Instr4', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1.2)
+8.0169 	EXP 	Created Instr_Creat_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Creat_4', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+8.0191 	EXP 	Created Instr_or_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Instr_or_4', opacity=1.0, ori=0, pos=array([-0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.0219 	EXP 	Created Instr_Bad_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Bad_4', opacity=1.0, ori=0, pos=array([-0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Bad', units=u'norm', win=Window(...), wrapWidth=1)
+8.0249 	EXP 	Created Instr_Prac_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Prac_4', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+8.0272 	EXP 	Created Instr_or_4_2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Instr_or_4_2', opacity=1.0, ori=0, pos=array([ 0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.0301 	EXP 	Created Instr_Good_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-7.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Good_4', opacity=1.0, ori=0, pos=array([ 0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Good', units=u'norm', win=Window(...), wrapWidth=1)
+8.0329 	EXP 	Created Creative_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Creative_4', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+8.0354 	EXP 	Created or_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='or_4', opacity=1.0, ori=0, pos=array([-0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.0383 	EXP 	Created Bad_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Bad_4', opacity=1.0, ori=0, pos=array([-0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Bad', units=u'norm', win=Window(...), wrapWidth=1)
+8.0423 	EXP 	Created Practical_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Practical_4', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+8.0445 	EXP 	Created or_2_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='or_2_4', opacity=1.0, ori=0, pos=array([ 0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.0474 	EXP 	Created Good_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Good_4', opacity=1.0, ori=0, pos=array([ 0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Good', units=u'norm', win=Window(...), wrapWidth=1)
+8.0530 	EXP 	Created Word_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Word_4', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 1.,  1.,  1.]), text=u'default text', units=u'norm', win=Window(...), wrapWidth=1)
+8.0551 	EXP 	Created Wrong_4 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-10.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Wrong_4', opacity=1.0, ori=0, pos=array([ 0. , -0.3]), rgb=array([ 255.,    0.,    0.]), text=u'X', units=u'norm', win=Window(...), wrapWidth=1)
+8.0883 	EXP 	Created Instr5 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, name='Instr5', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1.2)
+8.0912 	EXP 	Created Instr_Prac_5 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Prac_5', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+8.0942 	EXP 	Created Instr_Creat_5 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Creat_5', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+8.0973 	EXP 	Created Practical_5 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Practical_5', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+8.1002 	EXP 	Created Creative_5 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Creative_5', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+8.1060 	EXP 	Created Word_5 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Word_5', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 1.,  1.,  1.]), text=u'default text', units=u'norm', win=Window(...), wrapWidth=1)
+8.1080 	EXP 	Created Wrong_5 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Wrong_5', opacity=1.0, ori=0, pos=array([ 0. , -0.3]), rgb=array([ 255.,    0.,    0.]), text=u'X', units=u'norm', win=Window(...), wrapWidth=1)
+8.1224 	EXP 	Created Instr6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, name='Instr6', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1.2)
+8.1255 	EXP 	Created Instr_Prac_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Prac_6', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+8.1277 	EXP 	Created Instr_or_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Instr_or_6', opacity=1.0, ori=0, pos=array([-0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.1306 	EXP 	Created Instr_Bad_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Bad_6', opacity=1.0, ori=0, pos=array([-0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Bad', units=u'norm', win=Window(...), wrapWidth=1)
+8.1335 	EXP 	Created Instr_Creat_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Creat_6', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+8.1357 	EXP 	Created Instr_or_6_2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Instr_or_6_2', opacity=1.0, ori=0, pos=array([ 0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.1390 	EXP 	Created Instr_Good_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Good_6', opacity=1.0, ori=0, pos=array([ 0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Good', units=u'norm', win=Window(...), wrapWidth=1)
+8.1418 	EXP 	Created Practical_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Practical_6', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+8.1441 	EXP 	Created or_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='or_6', opacity=1.0, ori=0, pos=array([-0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.1470 	EXP 	Created Bad_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Bad_6', opacity=1.0, ori=0, pos=array([-0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Bad', units=u'norm', win=Window(...), wrapWidth=1)
+8.1499 	EXP 	Created Creative_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Creative_6', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+8.1521 	EXP 	Created or_2_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='or_2_6', opacity=1.0, ori=0, pos=array([ 0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.1549 	EXP 	Created Good_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Good_6', opacity=1.0, ori=0, pos=array([ 0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Good', units=u'norm', win=Window(...), wrapWidth=1)
+8.1607 	EXP 	Created Word_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Word_6', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 1.,  1.,  1.]), text=u'default text', units=u'norm', win=Window(...), wrapWidth=1)
+8.1627 	EXP 	Created Wrong_6 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-10.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Wrong_6', opacity=1.0, ori=0, pos=array([ 0. , -0.3]), rgb=array([ 255.,    0.,    0.]), text=u'X', units=u'norm', win=Window(...), wrapWidth=1)
+8.1782 	EXP 	Created Instr7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, name='Instr7', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1.2)
+8.1813 	EXP 	Created Instr_Prac_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Prac_7', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+8.1837 	EXP 	Created Instr_or_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Instr_or_7', opacity=1.0, ori=0, pos=array([-0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.1865 	EXP 	Created Instr_Bad_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Bad_7', opacity=1.0, ori=0, pos=array([-0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Bad', units=u'norm', win=Window(...), wrapWidth=1)
+8.1895 	EXP 	Created Instr_Creat_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Creat_7', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+8.1918 	EXP 	Created Instr_or_7_2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Instr_or_7_2', opacity=1.0, ori=0, pos=array([ 0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.1948 	EXP 	Created Instr_Good_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-7.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Instr_Good_7', opacity=1.0, ori=0, pos=array([ 0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Good', units=u'norm', win=Window(...), wrapWidth=1)
+8.1982 	EXP 	Created Practical_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Practical_7', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Practical', units=u'norm', win=Window(...), wrapWidth=1)
+8.2005 	EXP 	Created or_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='or_7', opacity=1.0, ori=0, pos=array([-0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.2033 	EXP 	Created Bad_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Bad_7', opacity=1.0, ori=0, pos=array([-0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Bad', units=u'norm', win=Window(...), wrapWidth=1)
+8.2065 	EXP 	Created Creative_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='skyblue', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Creative_7', opacity=1.0, ori=0, pos=array([ 0.8,  0.8]), rgb=array([ 135.,  206.,  235.]), text=u'Creative', units=u'norm', win=Window(...), wrapWidth=1)
+8.2088 	EXP 	Created or_2_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='or_2_7', opacity=1.0, ori=0, pos=array([ 0.8,  0.7]), rgb=array([ 128.,  128.,  128.]), text=u'or', units=u'norm', win=Window(...), wrapWidth=1)
+8.2119 	EXP 	Created Good_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='limegreen', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Good_7', opacity=1.0, ori=0, pos=array([ 0.8,  0.6]), rgb=array([  50.,  205.,   50.]), text=u'Good', units=u'norm', win=Window(...), wrapWidth=1)
+8.2175 	EXP 	Created Word_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.15, italic=False, name='Word_7', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 1.,  1.,  1.]), text=u'default text', units=u'norm', win=Window(...), wrapWidth=1)
+8.2196 	EXP 	Created Wrong_7 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-10.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Wrong_7', opacity=1.0, ori=0, pos=array([ 0. , -0.3]), rgb=array([ 255.,    0.,    0.]), text=u'X', units=u'norm', win=Window(...), wrapWidth=1)
+8.2335 	EXP 	Created Thanks = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='gray', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Thanks', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 128.,  128.,  128.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1)
+8.2419 	EXP 	Instr: autoDraw = True
+25.6600 	DATA 	Keypress: space
+25.6914 	EXP 	Instr: autoDraw = False
+25.6914 	EXP 	Instr_Creat_1: pos = array([-0.8,  0.8])
+25.6914 	EXP 	Instr_Prac_1: pos = array([ 0.8,  0.8])
+25.6914 	EXP 	Instr_1x: autoDraw = True
+25.6914 	EXP 	Instr_Creat_1: autoDraw = True
+25.6914 	EXP 	Instr_Prac_1: autoDraw = True
+39.5404 	DATA 	Keypress: space
+39.5457 	EXP 	Imported Creat_Prac.csv as conditions, 12 conditions, 4 params
+39.5468 	EXP 	Created sequence: random, trialTypes=12, nReps=2, seed=None
+39.5500 	EXP 	New trial (rep=0, index=0): {'color': 'skyblue', 'word': 'Efficient', 'condition': 'practical', 'key': 'i'}
+39.5802 	EXP 	Instr_1x: autoDraw = False
+39.5802 	EXP 	Instr_Creat_1: autoDraw = False
+39.5802 	EXP 	Instr_Prac_1: autoDraw = False
+39.5802 	EXP 	Creative: pos = array([-0.65,  0.65])
+39.5802 	EXP 	Practical: pos = array([ 0.65,  0.65])
+39.5802 	EXP 	Word_1: color = 'skyblue (named)'
+39.5802 	EXP 	Word_1: text = 'Efficient'
+39.5802 	EXP 	Creative: autoDraw = True
+39.5802 	EXP 	Practical: autoDraw = True
+39.8735 	EXP 	Word_1: autoDraw = True
+42.6267 	DATA 	Keypress: i
+42.6304 	EXP 	New trial (rep=0, index=1): {'color': 'skyblue', 'word': 'Functional', 'condition': 'practical', 'key': 'i'}
+42.6516 	EXP 	Creative: autoDraw = False
+42.6516 	EXP 	Practical: autoDraw = False
+42.6516 	EXP 	Word_1: autoDraw = False
+42.6516 	EXP 	Wrong_1: autoDraw = False
+42.6516 	EXP 	Creative: pos = array([-0.65,  0.65])
+42.6516 	EXP 	Practical: pos = array([ 0.65,  0.65])
+42.6516 	EXP 	Word_1: color = 'skyblue (named)'
+42.6516 	EXP 	Word_1: text = 'Functional'
+42.6516 	EXP 	Creative: autoDraw = True
+42.6516 	EXP 	Practical: autoDraw = True
+42.9599 	EXP 	Word_1: autoDraw = True
+44.5620 	DATA 	Keypress: i
+44.5644 	EXP 	New trial (rep=0, index=2): {'color': 'skyblue', 'word': 'Constructive', 'condition': 'practical', 'key': 'i'}
+44.5917 	EXP 	Creative: autoDraw = False
+44.5917 	EXP 	Practical: autoDraw = False
+44.5917 	EXP 	Word_1: autoDraw = False
+44.5917 	EXP 	Wrong_1: autoDraw = False
+44.5917 	EXP 	Creative: pos = array([-0.65,  0.65])
+44.5917 	EXP 	Practical: pos = array([ 0.65,  0.65])
+44.5917 	EXP 	Word_1: color = 'skyblue (named)'
+44.5917 	EXP 	Word_1: text = 'Constructive'
+44.5917 	EXP 	Creative: autoDraw = True
+44.5917 	EXP 	Practical: autoDraw = True
+44.8952 	EXP 	Word_1: autoDraw = True
+46.2300 	DATA 	Keypress: e
+46.2462 	EXP 	Wrong_1: autoDraw = True
+48.2990 	DATA 	Keypress: space
+49.2329 	DATA 	Keypress: i
+49.2346 	EXP 	New trial (rep=0, index=3): {'color': 'skyblue', 'word': 'Different', 'condition': 'creative', 'key': 'e'}
+49.2572 	EXP 	Creative: autoDraw = False
+49.2572 	EXP 	Practical: autoDraw = False
+49.2572 	EXP 	Word_1: autoDraw = False
+49.2572 	EXP 	Wrong_1: autoDraw = False
+49.2572 	EXP 	Creative: pos = array([-0.65,  0.65])
+49.2572 	EXP 	Practical: pos = array([ 0.65,  0.65])
+49.2572 	EXP 	Word_1: color = 'skyblue (named)'
+49.2572 	EXP 	Word_1: text = 'Different'
+49.2572 	EXP 	Creative: autoDraw = True
+49.2572 	EXP 	Practical: autoDraw = True
+49.5665 	EXP 	Word_1: autoDraw = True
+51.0876 	DATA 	Keypress: e
+51.1039 	EXP 	New trial (rep=0, index=4): {'color': 'skyblue', 'word': 'Practical', 'condition': 'practical', 'key': 'i'}
+51.1278 	EXP 	Creative: autoDraw = False
+51.1278 	EXP 	Practical: autoDraw = False
+51.1278 	EXP 	Word_1: autoDraw = False
+51.1278 	EXP 	Wrong_1: autoDraw = False
+51.1278 	EXP 	Creative: pos = array([-0.65,  0.65])
+51.1278 	EXP 	Practical: pos = array([ 0.65,  0.65])
+51.1278 	EXP 	Word_1: color = 'skyblue (named)'
+51.1278 	EXP 	Word_1: text = 'Practical'
+51.1278 	EXP 	Creative: autoDraw = True
+51.1278 	EXP 	Practical: autoDraw = True
+51.4350 	EXP 	Word_1: autoDraw = True
+52.4199 	DATA 	Keypress: i
+52.4224 	EXP 	New trial (rep=0, index=5): {'color': 'skyblue', 'word': 'Applied', 'condition': 'practical', 'key': 'i'}
+52.4487 	EXP 	Creative: autoDraw = False
+52.4487 	EXP 	Practical: autoDraw = False
+52.4487 	EXP 	Word_1: autoDraw = False
+52.4487 	EXP 	Wrong_1: autoDraw = False
+52.4487 	EXP 	Creative: pos = array([-0.65,  0.65])
+52.4487 	EXP 	Practical: pos = array([ 0.65,  0.65])
+52.4487 	EXP 	Word_1: color = 'skyblue (named)'
+52.4487 	EXP 	Word_1: text = 'Applied'
+52.4487 	EXP 	Creative: autoDraw = True
+52.4487 	EXP 	Practical: autoDraw = True
+52.7530 	EXP 	Word_1: autoDraw = True
+53.7045 	DATA 	Keypress: e
+53.7207 	EXP 	Wrong_1: autoDraw = True
+54.3915 	DATA 	Keypress: i
+54.4061 	EXP 	New trial (rep=0, index=6): {'color': 'skyblue', 'word': 'Novel', 'condition': 'creative', 'key': 'e'}
+54.4252 	EXP 	Creative: autoDraw = False
+54.4252 	EXP 	Practical: autoDraw = False
+54.4252 	EXP 	Word_1: autoDraw = False
+54.4252 	EXP 	Wrong_1: autoDraw = False
+54.4252 	EXP 	Creative: pos = array([-0.65,  0.65])
+54.4252 	EXP 	Practical: pos = array([ 0.65,  0.65])
+54.4252 	EXP 	Word_1: color = 'skyblue (named)'
+54.4252 	EXP 	Word_1: text = 'Novel'
+54.4252 	EXP 	Creative: autoDraw = True
+54.4252 	EXP 	Practical: autoDraw = True
+54.7383 	EXP 	Word_1: autoDraw = True
+57.3080 	DATA 	Keypress: e
+57.3105 	EXP 	New trial (rep=0, index=7): {'color': 'skyblue', 'word': 'Creative', 'condition': 'creative', 'key': 'e'}
+57.3308 	EXP 	Creative: autoDraw = False
+57.3308 	EXP 	Practical: autoDraw = False
+57.3308 	EXP 	Word_1: autoDraw = False
+57.3308 	EXP 	Wrong_1: autoDraw = False
+57.3308 	EXP 	Creative: pos = array([-0.65,  0.65])
+57.3308 	EXP 	Practical: pos = array([ 0.65,  0.65])
+57.3308 	EXP 	Word_1: color = 'skyblue (named)'
+57.3308 	EXP 	Word_1: text = 'Creative'
+57.3308 	EXP 	Creative: autoDraw = True
+57.3308 	EXP 	Practical: autoDraw = True
+57.6415 	EXP 	Word_1: autoDraw = True
+58.2423 	DATA 	Keypress: e
+58.2447 	EXP 	New trial (rep=0, index=8): {'color': 'skyblue', 'word': 'Original', 'condition': 'creative', 'key': 'e'}
+58.2729 	EXP 	Creative: autoDraw = False
+58.2729 	EXP 	Practical: autoDraw = False
+58.2729 	EXP 	Word_1: autoDraw = False
+58.2729 	EXP 	Wrong_1: autoDraw = False
+58.2729 	EXP 	Creative: pos = array([-0.65,  0.65])
+58.2729 	EXP 	Practical: pos = array([ 0.65,  0.65])
+58.2729 	EXP 	Word_1: color = 'skyblue (named)'
+58.2729 	EXP 	Word_1: text = 'Original'
+58.2729 	EXP 	Creative: autoDraw = True
+58.2729 	EXP 	Practical: autoDraw = True
+58.5759 	EXP 	Word_1: autoDraw = True
+59.8439 	DATA 	Keypress: e
+59.8463 	EXP 	New trial (rep=0, index=9): {'color': 'skyblue', 'word': 'Newfangled', 'condition': 'creative', 'key': 'e'}
+59.8712 	EXP 	Creative: autoDraw = False
+59.8712 	EXP 	Practical: autoDraw = False
+59.8712 	EXP 	Word_1: autoDraw = False
+59.8712 	EXP 	Wrong_1: autoDraw = False
+59.8712 	EXP 	Creative: pos = array([-0.65,  0.65])
+59.8712 	EXP 	Practical: pos = array([ 0.65,  0.65])
+59.8712 	EXP 	Word_1: color = 'skyblue (named)'
+59.8712 	EXP 	Word_1: text = 'Newfangled'
+59.8712 	EXP 	Creative: autoDraw = True
+59.8712 	EXP 	Practical: autoDraw = True
+60.1771 	EXP 	Word_1: autoDraw = True
+60.9950 	DATA 	Keypress: e
+60.9975 	EXP 	New trial (rep=0, index=10): {'color': 'skyblue', 'word': 'Inventive', 'condition': 'creative', 'key': 'e'}
+61.0273 	EXP 	Creative: autoDraw = False
+61.0273 	EXP 	Practical: autoDraw = False
+61.0273 	EXP 	Word_1: autoDraw = False
+61.0273 	EXP 	Wrong_1: autoDraw = False
+61.0273 	EXP 	Creative: pos = array([-0.65,  0.65])
+61.0273 	EXP 	Practical: pos = array([ 0.65,  0.65])
+61.0273 	EXP 	Word_1: color = 'skyblue (named)'
+61.0273 	EXP 	Word_1: text = 'Inventive'
+61.0273 	EXP 	Creative: autoDraw = True
+61.0273 	EXP 	Practical: autoDraw = True
+61.3282 	EXP 	Word_1: autoDraw = True
+62.1962 	DATA 	Keypress: e
+62.1986 	EXP 	New trial (rep=0, index=11): {'color': 'skyblue', 'word': 'Useful', 'condition': 'practical', 'key': 'i'}
+62.2272 	EXP 	Creative: autoDraw = False
+62.2272 	EXP 	Practical: autoDraw = False
+62.2272 	EXP 	Word_1: autoDraw = False
+62.2272 	EXP 	Wrong_1: autoDraw = False
+62.2272 	EXP 	Creative: pos = array([-0.65,  0.65])
+62.2272 	EXP 	Practical: pos = array([ 0.65,  0.65])
+62.2272 	EXP 	Word_1: color = 'skyblue (named)'
+62.2272 	EXP 	Word_1: text = 'Useful'
+62.2272 	EXP 	Creative: autoDraw = True
+62.2272 	EXP 	Practical: autoDraw = True
+62.5294 	EXP 	Word_1: autoDraw = True
+64.0314 	DATA 	Keypress: e
+64.0476 	EXP 	Wrong_1: autoDraw = True
+64.5147 	DATA 	Keypress: i
+64.5163 	EXP 	New trial (rep=1, index=0): {'color': 'skyblue', 'word': 'Applied', 'condition': 'practical', 'key': 'i'}
+64.5331 	EXP 	Creative: autoDraw = False
+64.5331 	EXP 	Practical: autoDraw = False
+64.5331 	EXP 	Word_1: autoDraw = False
+64.5331 	EXP 	Wrong_1: autoDraw = False
+64.5331 	EXP 	Creative: pos = array([-0.65,  0.65])
+64.5331 	EXP 	Practical: pos = array([ 0.65,  0.65])
+64.5331 	EXP 	Word_1: color = 'skyblue (named)'
+64.5331 	EXP 	Word_1: text = 'Applied'
+64.5331 	EXP 	Creative: autoDraw = True
+64.5331 	EXP 	Practical: autoDraw = True
+64.8484 	EXP 	Word_1: autoDraw = True
+65.7665 	DATA 	Keypress: e
+65.7827 	EXP 	Wrong_1: autoDraw = True
+66.2502 	DATA 	Keypress: i
+66.2529 	EXP 	New trial (rep=1, index=1): {'color': 'skyblue', 'word': 'Useful', 'condition': 'practical', 'key': 'i'}
+66.2777 	EXP 	Creative: autoDraw = False
+66.2777 	EXP 	Practical: autoDraw = False
+66.2777 	EXP 	Word_1: autoDraw = False
+66.2777 	EXP 	Wrong_1: autoDraw = False
+66.2777 	EXP 	Creative: pos = array([-0.65,  0.65])
+66.2777 	EXP 	Practical: pos = array([ 0.65,  0.65])
+66.2777 	EXP 	Word_1: color = 'skyblue (named)'
+66.2777 	EXP 	Word_1: text = 'Useful'
+66.2777 	EXP 	Creative: autoDraw = True
+66.2777 	EXP 	Practical: autoDraw = True
+66.5835 	EXP 	Word_1: autoDraw = True
+67.4848 	DATA 	Keypress: e
+67.5011 	EXP 	Wrong_1: autoDraw = True
+67.9019 	DATA 	Keypress: i
+67.9045 	EXP 	New trial (rep=1, index=2): {'color': 'skyblue', 'word': 'Constructive', 'condition': 'practical', 'key': 'i'}
+67.9298 	EXP 	Creative: autoDraw = False
+67.9298 	EXP 	Practical: autoDraw = False
+67.9298 	EXP 	Word_1: autoDraw = False
+67.9298 	EXP 	Wrong_1: autoDraw = False
+67.9298 	EXP 	Creative: pos = array([-0.65,  0.65])
+67.9298 	EXP 	Practical: pos = array([ 0.65,  0.65])
+67.9298 	EXP 	Word_1: color = 'skyblue (named)'
+67.9298 	EXP 	Word_1: text = 'Constructive'
+67.9298 	EXP 	Creative: autoDraw = True
+67.9298 	EXP 	Practical: autoDraw = True
+68.2351 	EXP 	Word_1: autoDraw = True
+69.5369 	DATA 	Keypress: e
+69.5531 	EXP 	Wrong_1: autoDraw = True
+70.0234 	DATA 	Keypress: i
+70.0396 	EXP 	New trial (rep=1, index=3): {'color': 'skyblue', 'word': 'Newfangled', 'condition': 'creative', 'key': 'e'}
+70.0690 	EXP 	Creative: autoDraw = False
+70.0690 	EXP 	Practical: autoDraw = False
+70.0690 	EXP 	Word_1: autoDraw = False
+70.0690 	EXP 	Wrong_1: autoDraw = False
+70.0690 	EXP 	Creative: pos = array([-0.65,  0.65])
+70.0690 	EXP 	Practical: pos = array([ 0.65,  0.65])
+70.0690 	EXP 	Word_1: color = 'skyblue (named)'
+70.0690 	EXP 	Word_1: text = 'Newfangled'
+70.0690 	EXP 	Creative: autoDraw = True
+70.0690 	EXP 	Practical: autoDraw = True
+70.3706 	EXP 	Word_1: autoDraw = True
+71.2220 	DATA 	Keypress: e
+71.2245 	EXP 	New trial (rep=1, index=4): {'color': 'skyblue', 'word': 'Creative', 'condition': 'creative', 'key': 'e'}
+71.2441 	EXP 	Creative: autoDraw = False
+71.2441 	EXP 	Practical: autoDraw = False
+71.2441 	EXP 	Word_1: autoDraw = False
+71.2441 	EXP 	Wrong_1: autoDraw = False
+71.2441 	EXP 	Creative: pos = array([-0.65,  0.65])
+71.2441 	EXP 	Practical: pos = array([ 0.65,  0.65])
+71.2441 	EXP 	Word_1: color = 'skyblue (named)'
+71.2441 	EXP 	Word_1: text = 'Creative'
+71.2441 	EXP 	Creative: autoDraw = True
+71.2441 	EXP 	Practical: autoDraw = True
+71.5547 	EXP 	Word_1: autoDraw = True
+72.1917 	DATA 	Keypress: e
+72.2082 	EXP 	New trial (rep=1, index=5): {'color': 'skyblue', 'word': 'Inventive', 'condition': 'creative', 'key': 'e'}
+72.2339 	EXP 	Creative: autoDraw = False
+72.2339 	EXP 	Practical: autoDraw = False
+72.2339 	EXP 	Word_1: autoDraw = False
+72.2339 	EXP 	Wrong_1: autoDraw = False
+72.2339 	EXP 	Creative: pos = array([-0.65,  0.65])
+72.2339 	EXP 	Practical: pos = array([ 0.65,  0.65])
+72.2339 	EXP 	Word_1: color = 'skyblue (named)'
+72.2339 	EXP 	Word_1: text = 'Inventive'
+72.2339 	EXP 	Creative: autoDraw = True
+72.2339 	EXP 	Practical: autoDraw = True
+72.5394 	EXP 	Word_1: autoDraw = True
+73.2072 	DATA 	Keypress: e
+73.2096 	EXP 	New trial (rep=1, index=6): {'color': 'skyblue', 'word': 'Different', 'condition': 'creative', 'key': 'e'}
+73.2306 	EXP 	Creative: autoDraw = False
+73.2306 	EXP 	Practical: autoDraw = False
+73.2306 	EXP 	Word_1: autoDraw = False
+73.2306 	EXP 	Wrong_1: autoDraw = False
+73.2306 	EXP 	Creative: pos = array([-0.65,  0.65])
+73.2306 	EXP 	Practical: pos = array([ 0.65,  0.65])
+73.2306 	EXP 	Word_1: color = 'skyblue (named)'
+73.2306 	EXP 	Word_1: text = 'Different'
+73.2306 	EXP 	Creative: autoDraw = True
+73.2306 	EXP 	Practical: autoDraw = True
+73.5401 	EXP 	Word_1: autoDraw = True
+75.0085 	DATA 	Keypress: e
+75.0101 	EXP 	New trial (rep=1, index=7): {'color': 'skyblue', 'word': 'Original', 'condition': 'creative', 'key': 'e'}
+75.0298 	EXP 	Creative: autoDraw = False
+75.0298 	EXP 	Practical: autoDraw = False
+75.0298 	EXP 	Word_1: autoDraw = False
+75.0298 	EXP 	Wrong_1: autoDraw = False
+75.0298 	EXP 	Creative: pos = array([-0.65,  0.65])
+75.0298 	EXP 	Practical: pos = array([ 0.65,  0.65])
+75.0298 	EXP 	Word_1: color = 'skyblue (named)'
+75.0298 	EXP 	Word_1: text = 'Original'
+75.0298 	EXP 	Creative: autoDraw = True
+75.0298 	EXP 	Practical: autoDraw = True
+75.3421 	EXP 	Word_1: autoDraw = True
+76.1267 	DATA 	Keypress: e
+76.1292 	EXP 	New trial (rep=1, index=8): {'color': 'skyblue', 'word': 'Functional', 'condition': 'practical', 'key': 'i'}
+76.1555 	EXP 	Creative: autoDraw = False
+76.1555 	EXP 	Practical: autoDraw = False
+76.1555 	EXP 	Word_1: autoDraw = False
+76.1555 	EXP 	Wrong_1: autoDraw = False
+76.1555 	EXP 	Creative: pos = array([-0.65,  0.65])
+76.1555 	EXP 	Practical: pos = array([ 0.65,  0.65])
+76.1555 	EXP 	Word_1: color = 'skyblue (named)'
+76.1555 	EXP 	Word_1: text = 'Functional'
+76.1555 	EXP 	Creative: autoDraw = True
+76.1555 	EXP 	Practical: autoDraw = True
+76.4597 	EXP 	Word_1: autoDraw = True
+77.3948 	DATA 	Keypress: i
+77.3973 	EXP 	New trial (rep=1, index=9): {'color': 'skyblue', 'word': 'Novel', 'condition': 'creative', 'key': 'e'}
+77.4203 	EXP 	Creative: autoDraw = False
+77.4203 	EXP 	Practical: autoDraw = False
+77.4203 	EXP 	Word_1: autoDraw = False
+77.4203 	EXP 	Wrong_1: autoDraw = False
+77.4203 	EXP 	Creative: pos = array([-0.65,  0.65])
+77.4203 	EXP 	Practical: pos = array([ 0.65,  0.65])
+77.4203 	EXP 	Word_1: color = 'skyblue (named)'
+77.4203 	EXP 	Word_1: text = 'Novel'
+77.4203 	EXP 	Creative: autoDraw = True
+77.4203 	EXP 	Practical: autoDraw = True
+77.7278 	EXP 	Word_1: autoDraw = True
+78.8311 	DATA 	Keypress: e
+78.8476 	EXP 	New trial (rep=1, index=10): {'color': 'skyblue', 'word': 'Practical', 'condition': 'practical', 'key': 'i'}
+78.8651 	EXP 	Creative: autoDraw = False
+78.8651 	EXP 	Practical: autoDraw = False
+78.8651 	EXP 	Word_1: autoDraw = False
+78.8651 	EXP 	Wrong_1: autoDraw = False
+78.8651 	EXP 	Creative: pos = array([-0.65,  0.65])
+78.8651 	EXP 	Practical: pos = array([ 0.65,  0.65])
+78.8651 	EXP 	Word_1: color = 'skyblue (named)'
+78.8651 	EXP 	Word_1: text = 'Practical'
+78.8651 	EXP 	Creative: autoDraw = True
+78.8651 	EXP 	Practical: autoDraw = True
+79.1794 	EXP 	Word_1: autoDraw = True
+79.9473 	DATA 	Keypress: i
+79.9498 	EXP 	New trial (rep=1, index=11): {'color': 'skyblue', 'word': 'Efficient', 'condition': 'practical', 'key': 'i'}
+79.9738 	EXP 	Creative: autoDraw = False
+79.9738 	EXP 	Practical: autoDraw = False
+79.9738 	EXP 	Word_1: autoDraw = False
+79.9738 	EXP 	Wrong_1: autoDraw = False
+79.9738 	EXP 	Creative: pos = array([-0.65,  0.65])
+79.9738 	EXP 	Practical: pos = array([ 0.65,  0.65])
+79.9738 	EXP 	Word_1: color = 'skyblue (named)'
+79.9738 	EXP 	Word_1: text = 'Efficient'
+79.9738 	EXP 	Creative: autoDraw = True
+79.9738 	EXP 	Practical: autoDraw = True
+80.2804 	EXP 	Word_1: autoDraw = True
+81.3342 	DATA 	Keypress: i
+81.3697 	EXP 	Creative: autoDraw = False
+81.3697 	EXP 	Practical: autoDraw = False
+81.3697 	EXP 	Word_1: autoDraw = False
+81.3697 	EXP 	Wrong_1: autoDraw = False
+81.3697 	EXP 	Instru2: autoDraw = True
+81.3697 	EXP 	Instr_Bad: autoDraw = True
+81.3697 	EXP 	Instr_Good: autoDraw = True
+84.3184 	DATA 	Keypress: escape

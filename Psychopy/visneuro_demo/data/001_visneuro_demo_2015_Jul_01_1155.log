@@ -1,0 +1,96 @@
+0.6325 	WARNING 	Movie2 stim could not be imported and won't be available
+5.4832 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([ 0.,  0.,  0.]), colorSpace='rgb', fullscr=UNKNOWN, gamma=None, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor instance at 0xb2d81e8>, name='window1', pos=[0, 0], screen=0, size=array([1440,  900]), stereo=False, units=u'norm', useFBO=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+5.4832 	EXP 	window1: recordFrameIntervals = False
+5.6485 	EXP 	window1: recordFrameIntervals = True
+5.8217 	WARNING 	t of last frame was 22.62ms (=1/44)
+6.0002 	EXP 	window1: recordFrameIntervals = False
+6.2332 	EXP 	Created Instructions = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Instructions', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1)
+6.2386 	EXP 	Created image = ImageStim(autoLog=True, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([ 0.,  0.]), size=array([ 1.,  1.]), texRes=128, units=u'norm', win=Window(...))
+6.2528 	EXP 	Created feedback_message = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=u'white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font=u'Arial', fontFiles=[], height=0.1, italic=False, name='feedback_message', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=u'default text', units=u'norm', win=Window(...), wrapWidth=1)
+6.2533 	EXP 	window1: recordFrameIntervals = False
+6.2678 	EXP 	Instructions: autoDraw = True
+6.2680 	EXP 	window1: recordFrameIntervals = False
+6.8376 	DATA 	Keypress: space
+6.8508 	EXP 	Imported images/datafile.xlsx as conditions, 10 conditions, 3 params
+6.8514 	EXP 	Created sequence: random, trialTypes=10, nReps=1, seed=None
+6.8523 	EXP 	New trial (rep=0, index=0): {u'correct_ans': u'right', u'images': u'images/cat_eyes.jpeg', u'type_of_image': u'cat'}
+6.8704 	EXP 	Instructions: autoDraw = False
+6.8704 	EXP 	image: image = u'images/cat_eyes.jpeg'
+6.8704 	EXP 	image: autoDraw = True
+8.0303 	DATA 	Keypress: right
+8.0597 	EXP 	image: autoDraw = False
+8.0597 	EXP 	feedback_message: text = 'Correct!'
+8.0597 	EXP 	feedback_message: autoDraw = True
+9.0308 	EXP 	New trial (rep=0, index=1): {u'correct_ans': u'up', u'images': u'images/marshmallow_hog.jpeg', u'type_of_image': u'hog'}
+9.0468 	EXP 	feedback_message: autoDraw = False
+9.0468 	EXP 	feedback_message: autoDraw = False
+9.0468 	EXP 	image: image = u'images/marshmallow_hog.jpeg'
+9.0468 	EXP 	image: autoDraw = True
+9.9011 	DATA 	Keypress: right
+9.9341 	EXP 	image: autoDraw = False
+9.9341 	EXP 	feedback_message: text = 'Oops! That was wrong'
+9.9341 	EXP 	feedback_message: autoDraw = True
+10.9058 	EXP 	New trial (rep=0, index=2): {u'correct_ans': u'up', u'images': u'images/icecream_hog.jpeg', u'type_of_image': u'hog'}
+10.9228 	EXP 	feedback_message: autoDraw = False
+10.9228 	EXP 	image: image = u'images/icecream_hog.jpeg'
+10.9228 	EXP 	image: autoDraw = True
+11.7091 	DATA 	Keypress: up
+11.7254 	EXP 	image: autoDraw = False
+11.7254 	EXP 	feedback_message: text = 'Correct!'
+11.7254 	EXP 	feedback_message: autoDraw = True
+12.7137 	EXP 	New trial (rep=0, index=3): {u'correct_ans': u'right', u'images': u'images/ear_muffs_cat.jpeg', u'type_of_image': u'cat'}
+12.7299 	EXP 	feedback_message: autoDraw = False
+12.7299 	EXP 	image: image = u'images/ear_muffs_cat.jpeg'
+12.7299 	EXP 	image: autoDraw = True
+13.5509 	DATA 	Keypress: right
+13.5669 	EXP 	image: autoDraw = False
+13.5669 	EXP 	feedback_message: text = 'Correct!'
+13.5669 	EXP 	feedback_message: autoDraw = True
+14.5553 	EXP 	New trial (rep=0, index=4): {u'correct_ans': u'right', u'images': u'images/rat_cat.jpeg', u'type_of_image': u'cat'}
+14.5714 	EXP 	feedback_message: autoDraw = False
+14.5714 	EXP 	image: image = u'images/rat_cat.jpeg'
+14.5714 	EXP 	image: autoDraw = True
+15.2584 	DATA 	Keypress: right
+15.2745 	EXP 	image: autoDraw = False
+15.2745 	EXP 	feedback_message: text = 'Correct!'
+15.2745 	EXP 	feedback_message: autoDraw = True
+16.2629 	EXP 	New trial (rep=0, index=5): {u'correct_ans': u'left', u'images': u'images/gorilla_tongue.jpeg', u'type_of_image': u'gorilla'}
+16.2791 	EXP 	feedback_message: autoDraw = False
+16.2791 	EXP 	image: image = u'images/gorilla_tongue.jpeg'
+16.2791 	EXP 	image: autoDraw = True
+16.7986 	DATA 	Keypress: left
+16.8147 	EXP 	image: autoDraw = False
+16.8147 	EXP 	feedback_message: text = 'Correct!'
+16.8147 	EXP 	feedback_message: autoDraw = True
+17.8032 	EXP 	New trial (rep=0, index=6): {u'correct_ans': u'up', u'images': u'images/egg_hog.jpeg', u'type_of_image': u'hog'}
+17.8192 	EXP 	feedback_message: autoDraw = False
+17.8192 	EXP 	image: image = u'images/egg_hog.jpeg'
+17.8192 	EXP 	image: autoDraw = True
+18.5899 	DATA 	Keypress: up
+18.6061 	EXP 	image: autoDraw = False
+18.6061 	EXP 	feedback_message: text = 'Correct!'
+18.6061 	EXP 	feedback_message: autoDraw = True
+19.5944 	EXP 	New trial (rep=0, index=7): {u'correct_ans': u'up', u'images': u'images/santa_hog.jpeg', u'type_of_image': u'hog'}
+19.6106 	EXP 	feedback_message: autoDraw = False
+19.6106 	EXP 	image: image = u'images/santa_hog.jpeg'
+19.6106 	EXP 	image: autoDraw = True
+20.3477 	DATA 	Keypress: up
+20.3638 	EXP 	image: autoDraw = False
+20.3638 	EXP 	feedback_message: text = 'Correct!'
+20.3638 	EXP 	feedback_message: autoDraw = True
+21.3522 	EXP 	New trial (rep=0, index=8): {u'correct_ans': u'left', u'images': u'images/gorilla_fat.jpeg', u'type_of_image': u'gorilla'}
+21.3684 	EXP 	feedback_message: autoDraw = False
+21.3684 	EXP 	image: image = u'images/gorilla_fat.jpeg'
+21.3684 	EXP 	image: autoDraw = True
+21.9381 	DATA 	Keypress: left
+21.9543 	EXP 	image: autoDraw = False
+21.9543 	EXP 	feedback_message: text = 'Correct!'
+21.9543 	EXP 	feedback_message: autoDraw = True
+22.9426 	EXP 	New trial (rep=0, index=9): {u'correct_ans': u'left', u'images': u'images/gorilla_face.jpeg', u'type_of_image': u'gorilla'}
+22.9588 	EXP 	feedback_message: autoDraw = False
+22.9588 	EXP 	image: image = u'images/gorilla_face.jpeg'
+22.9588 	EXP 	image: autoDraw = True
+23.4952 	DATA 	Keypress: left
+23.5113 	EXP 	image: autoDraw = False
+23.5113 	EXP 	feedback_message: text = 'Correct!'
+23.5113 	EXP 	feedback_message: autoDraw = True

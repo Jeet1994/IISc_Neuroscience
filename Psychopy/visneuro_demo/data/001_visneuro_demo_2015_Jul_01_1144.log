@@ -1,0 +1,63 @@
+1.0317 	WARNING 	Movie2 stim could not be imported and won't be available
+6.3489 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([ 0.,  0.,  0.]), colorSpace='rgb', fullscr=UNKNOWN, gamma=None, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor instance at 0xb2fc0d0>, name='window1', pos=[0, 0], screen=0, size=array([1440,  900]), stereo=False, units=u'norm', useFBO=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+6.3489 	EXP 	window1: recordFrameIntervals = False
+6.5147 	EXP 	window1: recordFrameIntervals = True
+6.6992 	EXP 	window1: recordFrameIntervals = False
+6.9432 	EXP 	Created Instructions = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, name='Instructions', opacity=1.0, ori=0, pos=array([ 0.,  0.]), rgb=array([ 255.,  255.,  255.]), text=unicode(...), units=u'norm', win=Window(...), wrapWidth=1)
+6.9487 	EXP 	Created image = ImageStim(autoLog=True, color=array([ 1.,  1.,  1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([ 0.,  0.]), size=array([ 1.,  1.]), texRes=128, units=u'norm', win=Window(...))
+6.9496 	EXP 	window1: recordFrameIntervals = False
+6.9667 	EXP 	Instructions: autoDraw = True
+6.9670 	EXP 	window1: recordFrameIntervals = False
+7.3961 	DATA 	Keypress: space
+7.4800 	EXP 	Imported images/datafile.xlsx as conditions, 10 conditions, 3 params
+7.4806 	EXP 	Created sequence: random, trialTypes=10, nReps=1, seed=None
+7.4814 	EXP 	New trial (rep=0, index=0): {u'correct_ans': u'up', u'images': u'images/egg_hog.jpeg', u'type_of_image': u'hog'}
+7.5025 	EXP 	Instructions: autoDraw = False
+7.5025 	EXP 	image: image = u'images/egg_hog.jpeg'
+7.5025 	EXP 	image: autoDraw = True
+8.8089 	DATA 	Keypress: up
+8.8106 	EXP 	New trial (rep=0, index=1): {u'correct_ans': u'right', u'images': u'images/rat_cat.jpeg', u'type_of_image': u'cat'}
+8.8250 	EXP 	image: autoDraw = False
+8.8250 	EXP 	image: image = u'images/rat_cat.jpeg'
+8.8250 	EXP 	image: autoDraw = True
+9.4450 	DATA 	Keypress: right
+9.4464 	EXP 	New trial (rep=0, index=2): {u'correct_ans': u'right', u'images': u'images/ear_muffs_cat.jpeg', u'type_of_image': u'cat'}
+9.4612 	EXP 	image: autoDraw = False
+9.4612 	EXP 	image: image = u'images/ear_muffs_cat.jpeg'
+9.4612 	EXP 	image: autoDraw = True
+10.0142 	DATA 	Keypress: right
+10.0156 	EXP 	New trial (rep=0, index=3): {u'correct_ans': u'right', u'images': u'images/cat_eyes.jpeg', u'type_of_image': u'cat'}
+10.0304 	EXP 	image: autoDraw = False
+10.0304 	EXP 	image: image = u'images/cat_eyes.jpeg'
+10.0304 	EXP 	image: autoDraw = True
+10.5165 	DATA 	Keypress: right
+10.5177 	EXP 	New trial (rep=0, index=4): {u'correct_ans': u'left', u'images': u'images/gorilla_tongue.jpeg', u'type_of_image': u'gorilla'}
+10.5326 	EXP 	image: autoDraw = False
+10.5326 	EXP 	image: image = u'images/gorilla_tongue.jpeg'
+10.5326 	EXP 	image: autoDraw = True
+10.9685 	DATA 	Keypress: left
+10.9698 	EXP 	New trial (rep=0, index=5): {u'correct_ans': u'up', u'images': u'images/marshmallow_hog.jpeg', u'type_of_image': u'hog'}
+10.9846 	EXP 	image: autoDraw = False
+10.9846 	EXP 	image: image = u'images/marshmallow_hog.jpeg'
+10.9846 	EXP 	image: autoDraw = True
+11.5543 	DATA 	Keypress: up
+11.5557 	EXP 	New trial (rep=0, index=6): {u'correct_ans': u'left', u'images': u'images/gorilla_face.jpeg', u'type_of_image': u'gorilla'}
+11.5706 	EXP 	image: autoDraw = False
+11.5706 	EXP 	image: image = u'images/gorilla_face.jpeg'
+11.5706 	EXP 	image: autoDraw = True
+12.1069 	DATA 	Keypress: left
+12.1081 	EXP 	New trial (rep=0, index=7): {u'correct_ans': u'up', u'images': u'images/icecream_hog.jpeg', u'type_of_image': u'hog'}
+12.1231 	EXP 	image: autoDraw = False
+12.1231 	EXP 	image: image = u'images/icecream_hog.jpeg'
+12.1231 	EXP 	image: autoDraw = True
+12.7431 	DATA 	Keypress: up
+12.7444 	EXP 	New trial (rep=0, index=8): {u'correct_ans': u'up', u'images': u'images/santa_hog.jpeg', u'type_of_image': u'hog'}
+12.7592 	EXP 	image: autoDraw = False
+12.7592 	EXP 	image: image = u'images/santa_hog.jpeg'
+12.7592 	EXP 	image: autoDraw = True
+13.3626 	DATA 	Keypress: up
+13.3645 	EXP 	New trial (rep=0, index=9): {u'correct_ans': u'left', u'images': u'images/gorilla_fat.jpeg', u'type_of_image': u'gorilla'}
+13.3786 	EXP 	image: autoDraw = False
+13.3786 	EXP 	image: image = u'images/gorilla_fat.jpeg'
+13.3786 	EXP 	image: autoDraw = True
+14.0824 	DATA 	Keypress: left
