@@ -10,3 +10,5 @@ Codes used during experiments at lab
 -> piNeuralynx: neuralynx file formats input and output along with file splitter on the basis of events
 
 -> positiontracking: different codes used for tracking position of animals during neuroscience experiments
+
+-> pistremaandrecord: lets you record as well as stream video over web browser. Motivated from https://github.com/waveform80/pistreaming
