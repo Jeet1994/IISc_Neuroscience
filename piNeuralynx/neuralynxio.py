@@ -191,7 +191,7 @@ def load_ncs(file_path, load_time=True, rescale_data=True, signal_scaling=MICROV
         num_samples = data.shape[0]
         times = np.interp(np.arange(num_samples), np.arange(0, num_samples, 512), records['TimeStamp']).astype(np.uint64)
         ncs['time'] = times
-        ncs['time_units'] = u'µs'
+        ncs['time_units'] = u'µs' 
 
     return ncs
 
@@ -220,10 +220,9 @@ def load_nev(file_path):
     return nev
 
 
-"""csc = load_ncs('CSC1.ncs')
-print csc['data']
+#csc = load_ncs('CSC1.ncs')
 
-print "\n\n\n\n"
+"""print "\n\n\n\n"
 
 events = load_nev('Events.nev')
 print events"""

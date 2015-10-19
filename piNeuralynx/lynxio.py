@@ -70,9 +70,11 @@ def loadNcs(filename, should_d2a=True, should_read_time=True, trim_zeros=True,
 
     if (a2d_conversion is None) and should_d2a:
         raise IOError("ADBitVolts not found in .ncs header for " + filename)
-
+        
+        
+    csc = a2d_conversion * csc.astype(np.float64)
     retvals = [csc]
-
+    
     if should_read_time:
         retvals.append(temp)
     if not should_d2a:
@@ -222,12 +224,8 @@ def loadNev(filename):
 
     return temp['time'], temp['id'], temp['nttl'], temp['estr']
 
-#timestamps = []
-#data = []
-#csc = loadNcs('CSC2.ncs')
-#for i in csc[1]:
-#    timestamps.append(i[0])
-#    data.append(i[4])
+#csc = loadNcs('CSC1.ncs')
+
 
 #print "\n\n\n\n"
 #
