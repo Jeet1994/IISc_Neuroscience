@@ -3,7 +3,7 @@ import fileSplitter
 import matplotlib.pyplot as plt
 import numpy as np
     
-channelname = 'CSC47'
+channelname = 'CSC1'
 filename = channelname + '.ncs'
 plotname = channelname +'FFT.png'
         
@@ -11,7 +11,7 @@ csc = lynxio.loadNcs(filename)
 eventTimestamps, eventId, nttl, eventNames = lynxio.loadNev('Events.nev')
 print eventNames
 
-def fft(datapoints, frequency):
+def fft(datapoints):
     y = datapoints
     n = len(y) # length of the signal
     Y = np.fft.fft(y)/n # fft computing and normalization
@@ -39,14 +39,14 @@ datapoints1khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[11],
 datapoints5khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[13],
 								 eventNames[13], eventTimestamps[14], eventNames[14])
 
-datapoints15khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[15],
-								 eventNames[15], eventTimestamps[16], eventNames[16])
+datapoints15khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[16],
+								 eventNames[16], eventTimestamps[17], eventNames[17])
          
-data = [fft(datapoints1e1hz, 0.1), fft(datapoints3hz, 3), fft(datapoints8hz, 8) , fft(datapoints30hz, 30) , fft(datapoints100hz, 100),
-            fft(datapoints1khz, 1000), fft(datapoints5khz, 5000), fft(datapoints15khz, 15000)]
+data = [fft(datapoints1e1hz), fft(datapoints3hz), fft(datapoints8hz) , fft(datapoints30hz) , fft(datapoints100hz),
+            fft(datapoints1khz), fft(datapoints5khz), fft(datapoints15khz)]
 
-x=[0,1,2,3,4,5,6,7,8]
-labels = ['.1','3','8','30','100','1000','5000','15000']
+x=[0,1,2,3,4,5,6,7,8, 9 ,10, 11, 12, 13]
+labels = ['.1','1','5','10','50','100','250','300', '350', '400', '450', '500', '600']
 plt.xticks(x, labels)
 plt.xlabel('frequency(hz)')
 plt.ylabel('Amplitude')

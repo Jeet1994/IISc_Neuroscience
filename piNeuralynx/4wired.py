@@ -1,26 +1,19 @@
+# -*- coding: utf-8 -*-
 import lynxio
 import fileSplitter
 import matplotlib.pyplot as plt
-import numpy as np
-    
+
 channelname = 'CSC1'
 filename = channelname + '.ncs'
-plotname = channelname +'FFT.png'
+plotname = channelname +'BoxPlot.png'
         
 csc = lynxio.loadNcs(filename)
 eventTimestamps, eventId, nttl, eventNames = lynxio.loadNev('Events.nev')
 print eventNames
 
-def fft(datapoints):
-    y = datapoints
-    n = len(y) # length of the signal
-    Y = np.fft.fft(y)/n # fft computing and normalization
-
-    return np.max(np.abs(Y))    
-    
 datapoints1e1hz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[1],
 								 eventNames[1], eventTimestamps[2], eventNames[2]) 
-
+         
 datapoints3hz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[3],
 								 eventNames[3], eventTimestamps[4], eventNames[4])
         
@@ -41,14 +34,15 @@ datapoints5khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[13],
 
 datapoints15khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[16],
 								 eventNames[16], eventTimestamps[17], eventNames[17])
-         
-data = [fft(datapoints1e1hz), fft(datapoints3hz), fft(datapoints8hz) , fft(datapoints30hz) , fft(datapoints100hz),
-            fft(datapoints1khz), fft(datapoints5khz), fft(datapoints15khz)]
+    
+maxdata = [datapoints1e1hz,datapoints3hz,datapoints8hz, datapoints30hz,datapoints100hz,datapoints1khz,datapoints5khz,datapoints15khz]
 
-x=[0,1,2,3,4,5,6,7,8, 9 ,10, 11, 12, 13]
-labels = ['.1','1','5','10','50','100','250','300', '350', '400', '450', '500', '600']
+x=[0,1,2,3,4,5,6,7, 8]
+labels = ['0' , '.1','3','8','30','100','1000','5000','15000']
+plt.boxplot(maxdata)
 plt.xticks(x, labels)
 plt.xlabel('frequency(hz)')
-plt.ylabel('Amplitude')
-plt.plot(data,'b--o',)
+plt.ylabel('output voltage variation')
+plt.ylim((-1500,1500))
 plt.savefig(plotname)
+
