@@ -10,7 +10,7 @@ while True:
     ret2, frame2 = capture2.read()
 
     h1, w1, d1 = capture1.get(cv.CV_CAP_PROP_FRAME_HEIGHT), capture1.get(cv.CV_CAP_PROP_FRAME_WIDTH), 3
-    h2, w2, d2 = capture1.get(cv.CV_CAP_PROP_FRAME_HEIGHT), capture1.get(cv.CV_CAP_PROP_FRAME_WIDTH), 3
+    h2, w2, d2 = capture2.get(cv.CV_CAP_PROP_FRAME_HEIGHT), capture2.get(cv.CV_CAP_PROP_FRAME_WIDTH), 3
 
     vis = np.zeros((max(h1,h2), w1+w2, 3), np.uint8)
     if frame1 is None:
