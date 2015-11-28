@@ -125,11 +125,13 @@ def stitchImages(base_img_rgb, dir_list, output, round, img_type):
 
         # Find points in the next frame
         next_features, next_descs = detector.detectAndCompute(next_img, None)
-
+        
+        #find matches in the K nearest neighbor matcher
         matches = matcher.knnMatch(next_descs, trainDescriptors=base_descs, k=2)
 
         print "\t Match Count: ", len(matches)
-
+        
+        #filter the matches on the basis of distance between them
         matches_subset = filter_matches(matches)
 
         print "\t Filtered Match Count: ", len(matches_subset)
