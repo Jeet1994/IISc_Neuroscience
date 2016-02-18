@@ -4,6 +4,10 @@
 import numpy as np
 import cv2
 
+"""
+Function to find the contour closest to the previous position of animals, 
+helps in faster processing of animal position
+"""
 def minimumDistanceContour(contours, center):
     distances = []
     for i in range(0,len(contours)):
@@ -12,7 +16,11 @@ def minimumDistanceContour(contours, center):
     index = distances.index(min(distances))
     return index
 
-	
+"""
+Function to track red color on the basis of hue value, 
+does a weighted summation of lower red hue range and 
+upper red hue range.
+"""	
 def hueBasedTracking(frame):
     #useful for smoothening the images, median of all the pixels under kernel 
     #area and central element is replaced with this median value. 
@@ -43,18 +51,26 @@ def hueBasedTracking(frame):
 	    c = max(cnts, key=cv2.contourArea)
 	    ((x, y), radius) = cv2.minEnclosingCircle(c)
 	    M = cv2.moments(c)
+	    #gives x and y coordinates of center
 	    center = (int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"]))
     return center #returns the centroid for th image
 
+"""
+Function to perform background subtraction 
+"""
 def backGroundSubtraction(animalPosition, contours, frame):
+	#if no contours found, object is stable hence run hue based tracking 
 	if len(contours)==0:
 		animalPosition = hueBasedTracking(frame)
+	#if contour is found, then fing the index of closest contour 
 	else:
 		indexMinDistanceContour = minimumDistanceContour(contours, center)
 		for i in range(0,len(contours)):
-			distance = cv2.pointPolygonTest(contours[i], center, True)
+			distance = cv2.pointPolygonTest(contours[i], center, True) #find distance of all contours from animal position
+			#if animalposition is inside contour, then print center
 			if distance >= 0:
 				animalPosition = center
+			#else find the closest contour center to previous animal position
 			else:	
 				M = cv2.moments(contours[indexMinDistanceContour])
 				animalPosition = (int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"]))
@@ -62,6 +78,8 @@ def backGroundSubtraction(animalPosition, contours, frame):
 
 
 camera = cv2.VideoCapture('motion.h264')
+
+animalPositionFile = open('animalPositionTrack.txt','w')
 
 # initialize the first frame in the video stream
 firstFrame = None
@@ -87,11 +105,15 @@ while True:
 
 	# compute the absolute difference between the current frame and first frame
 	frameDelta = cv2.absdiff(firstFrame, gray)
+
+
 	thresh = cv2.adaptiveThreshold(frameDelta, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,11,2)
 	#thresh = cv2.threshold(frameDelta, 25, 255, cv2.THRESH_BINARY)[-1]
 
 	# dilate the thresholded image to fill in holes, then find contours on thresholded image
 	thresh = cv2.dilate(thresh, None, iterations=2)
+
+	#find contours 
 	(contours, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 	
 	position = None
@@ -100,11 +122,13 @@ while True:
 
 	if animalPosition is None:
 		animalPosition = center
+
 	#if no movement or the animal is stable, no contours will be found
 	#then in that case use the hue based tracking code 
 	animalPosition = backGroundSubtraction(animalPosition, contours, frame)
 				
-	print camera.get(1), animalPosition
+	animalPositionFile.write( camera.get(1), animalPosition )
+	
 	cv2.circle(frame, animalPosition, 5, (255,0,0), 2)
 	cv2.imshow('Tracking', frame)
 
@@ -115,3 +139,5 @@ while True:
 # cleanup the camera and close any open windows
 camera.release()
 cv2.destroyAllWindows()
+
+animalPositionFile.close()
