@@ -27,11 +27,11 @@ while(cap.isOpened()):
     upper_red_hue_range = cv2.inRange(hsv_image, np.array([160, 100, 100]), np.array([179, 255, 255]))
 
     #Calculates the weighted sum of two arrays.
-    red_hue_image = cv2.addWeighted(lower_red_hue_range, 1.0, upper_red_hue_range, 2.0, 0.0)
+    red_hue_image = cv2.addWeighted(lower_red_hue_range, 1.0, upper_red_hue_range, 1.0, 0.0)
     
     #Blurs an image using a Gaussian filter
     #The function convolves the source image with the specified Gaussian kernel
-    red_hue_image = cv2.GaussianBlur(red_hue_image, (9, 9), 2, 2)
+    red_hue_image = cv2.GaussianBlur(red_hue_image, (2, 2), 2, 2)
 
     #find contours in the red_hue_image formed after weighted adding of lower and upper ranges of red
     cnts = cv2.findContours(red_hue_image.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
