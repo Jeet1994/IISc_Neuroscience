@@ -1,0 +1,15 @@
+int ranNum;
+int ranDel;
+void setup() {
+// Setup output ports for LED
+pinMode(3, OUTPUT);
+}
+void loop() {
+    // Generate random delay time
+    ranDel=random(25,300);
+    //Turn on the LED
+    digitalWrite(ranNum, HIGH);
+    delay(ranDel);
+    //Turn off the LED
+    digitalWrite(ranNum, LOW);  
+}
