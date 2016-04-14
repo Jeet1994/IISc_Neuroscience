@@ -35,5 +35,5 @@ def fileSplitterUsingEvents(ncsData, eventStartTimestamp, eventStartName, eventS
 	for ts in ncsData[1]:
 		if ts[0]>= eventStartTime and ts[0]<=eventStopTime:
                   for t in ts[4]:
-                     dataPoints.append(t*1e6*0.000000030518510385491027)
+                     dataPoints.append(t*1e6*0.000000030518510385491027)            
 	return dataPoints

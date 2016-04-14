@@ -218,11 +218,3 @@ def load_nev(file_path):
     nev['events'] = records[['pkt_id', 'TimeStamp', 'event_id', 'ttl', 'Extra', 'EventString']]
     
     return nev
-
-
-#csc = load_ncs('CSC1.ncs')
-
-"""print "\n\n\n\n"
-
-events = load_nev('Events.nev')
-print events"""
