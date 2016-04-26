@@ -14,7 +14,7 @@ for filename in os.listdir(os.getcwd()):
         eventTimestamps, eventId, nttl, eventNames = lynxio.loadNev('Events.nev')
         print eventNames
 
-        datapoints100hz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[1],
+        datapointsbaseline = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[1],
         								 eventNames[1], eventTimestamps[2], eventNames[2]) 
         datapoints250hz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[3],
         								 eventNames[3], eventTimestamps[4], eventNames[4])        
@@ -40,16 +40,18 @@ for filename in os.listdir(os.getcwd()):
         								 eventNames[23], eventTimestamps[24], eventNames[24])
         datapoints8khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[25],
         								 eventNames[25], eventTimestamps[26], eventNames[26])
-        datapoints9khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[27],
-        								 eventNames[27], eventTimestamps[28], eventNames[28])         
-        datapoints10khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[29],
+        #datapoints9khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[27],
+        #								 eventNames[27], eventTimestamps[28], eventNames[28])         
+        datapoints9khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[29],
         								 eventNames[29], eventTimestamps[30], eventNames[30])
+        datapoints10khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[31],
+        								 eventNames[31], eventTimestamps[32], eventNames[32])
                  
-        data = [datapoints100hz,datapoints250hz,datapoints300hz, datapoints450hz, datapoints500hz,datapoints600hz,datapoints750hz,datapoints1khz,datapoints2khz, 
+        data = [datapointsbaseline,datapoints250hz,datapoints300hz, datapoints450hz, datapoints500hz,datapoints600hz,datapoints750hz,datapoints1khz,datapoints2khz, 
                    datapoints4khz, datapoints6khz, datapoints7khz, datapoints8khz, datapoints9khz, datapoints10khz]
         
         x=[1,2,3,4,5,6,7,8, 9 ,10, 11, 12, 13, 14, 15, 16]
-        labels = ['250','300','450','500','600','750','1k', '2k', '4k', '6k', '7k', '8k', '9k', '10k']
+        labels = ['baseline', '250','300','450','500','600','750','1k', '2k', '4k', '6k', '7k', '8k', '9k', '10k']
         plt.boxplot(data)
         plt.xticks(x, labels)
         plt.xlabel('frequency(hz)')

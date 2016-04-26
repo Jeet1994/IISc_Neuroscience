@@ -1,5 +1,4 @@
 import neuralynxio
-import matplotlib.pyplot as plt
 import os
 import scipy.io
 

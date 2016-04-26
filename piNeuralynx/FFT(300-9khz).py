@@ -20,8 +20,8 @@ for filename in os.listdir(os.getcwd()):
         eventTimestamps, eventId, nttl, eventNames = lynxio.loadNev('Events.nev')
         print eventNames    
 
-        #datapoints100hz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[1],
-        #								 eventNames[1], eventTimestamps[2], eventNames[2])[0:30000] 
+        datapointsbaseline = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[1],
+        								 eventNames[1], eventTimestamps[2], eventNames[2])[0:30000] 
         datapoints250hz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[3],
         								 eventNames[3], eventTimestamps[4], eventNames[4])[0:30000]        
         datapoints300hz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[5],
@@ -46,13 +46,19 @@ for filename in os.listdir(os.getcwd()):
         								 eventNames[23], eventTimestamps[24], eventNames[24])[0:30000]
         datapoints8khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[25],
         								 eventNames[25], eventTimestamps[26], eventNames[26])[0:30000]
-        datapoints9khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[27],
-        								 eventNames[27], eventTimestamps[28], eventNames[28])[0:30000]         
-        datapoints10khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[29],
+        #datapoints9khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[27],
+        #								 eventNames[27], eventTimestamps[28], eventNames[28])[0:30000]         
+        datapoints9khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[29],
         								 eventNames[29], eventTimestamps[30], eventNames[30])[0:30000]
+        datapoints10khz = fileSplitter.fileSplitterUsingEvents(csc, eventTimestamps[31],
+        								 eventNames[31], eventTimestamps[32], eventNames[32])[0:30000]
+                 
         data = [fft(datapoints250hz), fft(datapoints300hz) , fft(datapoints450hz) , fft(datapoints500hz),
                 fft(datapoints600hz), fft(datapoints750hz), fft(datapoints1khz), fft(datapoints2khz), fft(datapoints4khz),
                 fft(datapoints6khz), fft(datapoints7khz), fft(datapoints8khz), fft(datapoints9khz), fft(datapoints10khz)]
+                
+        baselinepostFFT = fft(datapointsbaseline)
+        #print baselinepostFFT
 
         x=[0,1,2,3,4,5,6,7,8, 9 ,10, 11, 12, 13, 14, 15, 16]
         labels = ['250','300','450','500','600','750','1k', '2k', '4k', '6k', '7k', '8k', '9k', '10k']
@@ -61,5 +67,6 @@ for filename in os.listdir(os.getcwd()):
         plt.xlabel('Freq')
         plt.ylim([0,180])
         plt.plot(data, 'b--o',)
+        plt.axhline(y=baselinepostFFT, xmin=0, xmax=10, hold=None, color='red')
         plt.savefig(plotname)
         plt.close()
