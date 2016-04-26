@@ -47,8 +47,8 @@ occupancy = sio.loadmat('occ.mat')
 occupancy =  occupancy['occupancy']
 
 #center and radius for the mask calculated using brute force method 
-(circle_x,circle_y) = (370,330)
-radius = 180
+(circle_x,circle_y) = (380,345)
+radius = 165
 
 mask = circular_mask(occupancy.shape,(circle_x, circle_y),radius,(0,360))
 
@@ -63,7 +63,9 @@ test_convolve_filter = np.array([[1,1,1],[1,9,1],[1,1,1]])
 test_convolve = sim.filters.convolve(final_occupancy, test_convolve_filter)
 
 #Gaussian filter test
-test_gaussian = sim.filters.gaussian_filter(final_occupancy, sigma=2.0)
+test_gaussian = sim.filters.gaussian_filter(final_occupancy, sigma=2.0, mode='wrap')
+
+#mode = {'reflect’, ‘constant’, ‘nearest’, ‘mirror’, ‘wrap’}
 
 pl.pcolor(test_gaussian)
 pl.colorbar()
