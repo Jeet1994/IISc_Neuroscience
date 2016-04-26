@@ -62,11 +62,14 @@ final_occupancy = np.ma.MaskedArray(occupancy, mask=~mask)
 test_convolve_filter = np.array([[1,1,1],[1,9,1],[1,1,1]])
 test_convolve = sim.filters.convolve(final_occupancy, test_convolve_filter)
 
-#Gaussian filter test
-test_gaussian = sim.filters.gaussian_filter(final_occupancy, sigma=2.0, mode='wrap')
-
 #mode = {'reflect’, ‘constant’, ‘nearest’, ‘mirror’, ‘wrap’}
 
-pl.pcolor(test_gaussian)
+#Gaussian filter test
+test_gaussian = sim.filters.gaussian_filter(final_occupancy, sigma=3, mode='constant')
+
+#Uniform Filter for running average
+test_uniform = sim.filters.uniform_filter(final_occupancy, size=3, mode='constant')
+
+pl.pcolor(test_custom_gaussian)
 pl.colorbar()
 pl.show()
