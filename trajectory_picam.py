@@ -8,16 +8,11 @@ Created on Wed Apr 27 10:38:59 2016
 """
 File contains data in this format:
 
---------------------------
-|  Timestamp   (Double)  |
 |------------------------|
 |  X coord     (Single)  |
 |------------------------|
 |  Y coord     (Single)  |
-|------------------------|
-|  Direction   (Single)  |
 --------------------------
-
 """
 
 import matplotlib.pyplot as plt
