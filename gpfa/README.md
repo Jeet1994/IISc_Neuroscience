@@ -23,4 +23,7 @@ Adding an option to include a number of known regressors. This can be useful if 
 -> Estimation of residual covariance. 
 Adding an option to estimate the residual covariance that remains after a certain number of latent factors have been accounted for. This can be useful if you want to estimate the covariance in the presence of some confounding variable(extraneous variable in a model correlated with both the dependent and independent variable), which is modeled by the latent factor.
 
+-> Applying non-stationary GP kernels
+since the neural data is generally non-stationary, allowing for computing processes whose joint probability changes when shifted in time implying that the mean and variance also change with time
+
 ## Motivated from https://github.com/mackelab/poisson-gpfa with source code Copyright (c) 2015, mackelab All rights reserved.
