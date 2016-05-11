@@ -1,7 +1,7 @@
 % load input images
-I1 = double(imread('3-4-7-8.jpg'));
+I1 = double(imread('1-2-5-6.jpg'));
 [h1 w1 d1] = size(I1);
-I2 = double(imread('1-2-5-6.jpg'));
+I2 = double(imread('3-4-7-8.jpg'));
 [h2 w2 d2] = size(I2);
 
 % show input images and prompt for correspondences
