@@ -1,7 +1,6 @@
 """Loads data stored in the formats used by the Neuralynx recording systems."""
 
 import numpy as np
-import matplotlib.pyplot as plt
 
 def loadNcs(filename, should_d2a=True, should_read_time=True, trim_zeros=True,
             return_header=False, auto_invert=True):
@@ -60,7 +59,7 @@ def loadNcs(filename, should_d2a=True, should_read_time=True, trim_zeros=True,
            ts = ts[:csc.size]
 
     # now scan the header for a2d information
-    a2d_conversion = None
+    global a2d_conversion
     for line in header.split('\n'):
         if line.strip().startswith('-ADBitVolts'):
             a2d_conversion = 1e6 * np.array(map(float, line.split()[1:5]))
@@ -86,6 +85,46 @@ def loadNcs(filename, should_d2a=True, should_read_time=True, trim_zeros=True,
         return retvals[0]
     else:
         return tuple(retvals)
+
+""" this works because the ncs timestamps are sorted array on basis of time"""
+def nextGreaterElement(timestamps, eventStartTimestamp):
+	for index,ts in enumerate(timestamps):
+		if ts > eventStartTimestamp:
+			return ts
+	raise ValueError("Nothing Found")
+
+def nextSmallerElement(timestamps, eventStopTimestamp):
+	try: return max(ts for ts in timestamps if ts< eventStopTimestamp)
+	except ValueError: return "Nothing Found"
+
+def fileSplitterUsingEvents(ncsData, eventStartTimestamp, eventStartName, eventStopTimestamp, eventStopName):
+	"""Splits the ncs data on the basis of event start time and event stop time.
+        Keyword arguments:
+        ncsData -- refers to the data collected over a channel
+        eventStartTimestamp --  start time for the event
+        eventStartName --  event name for the starting timestamp
+        eventStopTimestamp --  stop time for the event
+        eventStopName -- event name for the stopping timesamp
+        Returns (in order):
+        - frequency data in the range between event start time and event stop time
+        """
+	
+	#store all the timestamps in one single list
+	ncsTimestamp = []
+	for ts in ncsData[1]:
+		ncsTimestamp.append(ts[0])
+
+	#get time stamp next to start time
+	eventStartTime = nextGreaterElement(ncsTimestamp, eventStartTimestamp)
+	#get time stamp just before stop time
+	eventStopTime = nextSmallerElement(ncsTimestamp, eventStopTimestamp)
+
+	dataPoints = []
+	for ts in ncsData[1]:
+		if ts[0]>= eventStartTime and ts[0]<=eventStopTime:
+                  for t in ts[4]:
+                     dataPoints.append(t*1e6*a2d_conversion)            
+	return dataPoints
 
 
 def loadTetrodeNcs(filename, should_d2a=True, trim_zeros=True):
