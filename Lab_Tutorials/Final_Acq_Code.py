@@ -81,7 +81,7 @@ try:
         camera.brightness = BRIGHTNESS
         camera.contrast = CONTRAST
         camera.sharpness = SHARPNESS
-	camera.video_stabilization = VIDEO_STABILIZATION			
+	    camera.video_stabilization = VIDEO_STABILIZATION
 
         #warm-up time to camera to set its initial settings
         time.sleep(2)
@@ -94,19 +94,19 @@ try:
         time.sleep(2)
     	
         camera.exposure_mode = 'off'
-	camera.hflip = False
-	camera.vflip = False	
+	    camera.hflip = False
+	    camera.vflip = False
 	
-	camera.start_preview()
+	    camera.start_preview()
         # Construct an instance of our custom output splitter with a filename  and a connected socket
-        print 'Starting Re1cording'
+        print 'Starting Recording'
         # Record video to the custom output (we need to specify the format as
         # the custom output doesn't pretend to be a file with a filename)
         camera.start_recording(MyOutput(camera, VIDEO_FILE_NAME, TIMESTAMP_FILE_NAME), format='h264')
         print 'Started Recording'
         camera.wait_recording(totalRunningTime)
         camera.stop_recording()
-	camera.stop_preview()
+	    camera.stop_preview()
         print 'Recording Stopped'
         print 'Output File Closed'
 except KeyboardInterrupt:
