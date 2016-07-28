@@ -11,7 +11,9 @@ Now once you have anaconda installed on your system, you get access to a list of
 at your disposal and you dont have to go installing them.
 
 Also, anaconda distribution provides you with **Jupyter Notebook** using which you can view/edit/create ipython notebook i.e. the above
-mentioned file. 
+mentioned file. Here are the links to cheatsheet and documentation:
+https://sowingseasons.com/blog/reference/2016/01/jupyter-keyboard-shortcuts/23298516
+http://jupyter-notebook.readthedocs.io/en/latest/notebook.html
 
 --- TO DO ---
 * Stiching Script Documentation
