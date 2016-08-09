@@ -56,7 +56,7 @@ def loadNcs(filename, should_d2a=True, should_read_time=True, trim_zeros=True,
     if trim_zeros:
         csc = np.trim_zeros(csc, 'b')
         if should_read_time:
-           ts = ts[:csc.size]
+            ts = ts[:csc.size]
 
     # now scan the header for a2d information
     global a2d_conversion
