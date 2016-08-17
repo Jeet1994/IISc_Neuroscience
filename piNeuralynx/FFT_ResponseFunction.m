@@ -1,12 +1,12 @@
-
+   function plotting(datum, name)
    %% Time specifications:
    Fs = 30000;                    % samples per second
    dt = 1/Fs;                     % seconds per sample
    StopTime = 1;                  % seconds
    t = (0:dt:StopTime-dt);
    %% Sine wave
-   x = load('Mux_CSC40_rawData.mat', 'rawData');
-   x = x.rawData;
+   %%x = load('AnalogRat_Ir1000_t256_64CSC_FullBand_1SSI_KEBPower_DedicatedGround2016-08-13_17-17-30_CSC30_rawData.mat', 'rawData');
+   x = datum.rawData;
    [L,N] = size(x);
    %% Frequency specifications:
    dF = Fs/N;                      % hertz
@@ -18,3 +18,7 @@
    plot(f,abs(X));
    xlabel('Frequency (in hertz)');
    title('Magnitude Response');
+   [name, r] = strtok(name, '.')
+   savefig(name);
+   close all;
+   end
