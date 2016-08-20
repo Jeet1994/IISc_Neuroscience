@@ -18,4 +18,3 @@ http://jupyter-notebook.readthedocs.io/en/latest/notebook.html
 
 --- TO DO ---
 * Stiching Script Documentation
-* Neuralynx Calibration GUI/ documentation
