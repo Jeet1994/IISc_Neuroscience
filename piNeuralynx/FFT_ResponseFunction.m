@@ -1,6 +1,6 @@
    function plotting(datum, name)
    %% Time specifications:
-   Fs = 30000;                    % samples per second
+   Fs = datum.samplingRate;       % samples per second
    dt = 1/Fs;                     % seconds per sample
    StopTime = 1;                  % seconds
    t = (0:dt:StopTime-dt);
