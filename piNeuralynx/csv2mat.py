@@ -1,22 +1,16 @@
 # -*- coding: utf-8 -*-
 
-import csv  
-import sys
-import numpy
 import scipy.io
 import os
 
 for filename in os.listdir(os.getcwd()):
     if filename.endswith(".CSV"): 
         idno = filename.split('.')[0]
-      
         data = [ ]
-        reader = csv.reader(filename)
-        
-        for row in reader:
-            print row
-            rowData = [ float(elem) for elem in row ]
-            data.append(rowData)
-
-        matrix = numpy.array(data)
-        scipy.io.savemat(idno+'.mat', {'csvmatrix':matrix})
+        with open(filename, 'rb') as f:
+            for row in f:
+                row = row.split(',')
+                time, ampl = float(row[3]), float(row[4])
+                data.append(ampl)
+                scipy.io.savemat(idno+'.mat', {'csvdata':data})
+        f.close()
