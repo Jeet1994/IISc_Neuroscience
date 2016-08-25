@@ -16,7 +16,7 @@ class MotionDetectorAdaptative():
         self.frame = None
     
         #self.capture=cv.CaptureFromCAM(0)
-        self.capture=cv.CaptureFromFile('motion.h264')
+        self.capture=cv.CaptureFromFile('Day14_squareplatform_cam2_output_2016-08-11 11_07_46 268190.h264')
 	self.frame = cv.QueryFrame(self.capture) #Take a frame to init recorder
         if doRecord:
             self.initRecorder()

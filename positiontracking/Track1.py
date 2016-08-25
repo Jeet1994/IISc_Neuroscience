@@ -2,12 +2,16 @@ import numpy as np
 import cv2
 import copy
 from collections import deque
+import csv
 
-cap = cv2.VideoCapture('motion.h264')
+filename = 'Day13_CircularTrack_cam2_output_2016-08-10 15_36_08 064928.h264'
+cap = cv2.VideoCapture(filename)
 
 while(cap.isOpened()):
     #read the video frame by frame
     ret, frame = cap.read()
+    if frame is None:
+	break
     
     #copy of frame read just now 
     orig_image = frame.copy()
@@ -33,7 +37,7 @@ while(cap.isOpened()):
 
     #find contours in the red_hue_image formed after weighted adding of lower and upper ranges of red
     cnts = cv2.findContours(red_hue_image.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
-    center = None
+    center = (None, None)
 
     # only proceed if at least one contour was found
     if len(cnts) > 0:
@@ -43,19 +47,25 @@ while(cap.isOpened()):
 	c = max(cnts, key=cv2.contourArea)
 	((x, y), radius) = cv2.minEnclosingCircle(c)
 	M = cv2.moments(c)
-	center = (int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"]))
+	center = int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"])
  
 	# only proceed if the radius meets a minimum size
 	if radius > 2:
 	    # draw the circle and centroid on the frame,
 	    # then update the list of tracked points
-	    cv2.circle(orig_image, (int(x), int(y)), int(radius),(0, 255, 255), 2)
-	    cv2.circle(orig_image, center, 5, (0, 0, 255), -1)
+	    #cv2.circle(orig_image, (int(x), int(y)), int(radius),(0, 255, 255), 1)
+	    cv2.circle(orig_image, center, 2, (0, 0, 255), -1)
+    
+    x,y = center[0], center[1] 
+    if x==None and y==None:
+	x, y = 0, 0
+    currentFrameNum = cap.get(cv2.cv.CV_CAP_PROP_POS_FRAMES)
+    print currentFrameNum,x,y
 
-    cv2.imshow("Threshold lower image", lower_red_hue_range);
-    cv2.imshow("Threshold upper image", upper_red_hue_range);	
-    cv2.imshow("Combined threshold images", red_hue_image)
-    cv2.imshow("Detected red circles on the input image", orig_image)
+    #cv2.imshow("Threshold lower image", lower_red_hue_range)
+    #cv2.imshow("Threshold upper image", upper_red_hue_range)	
+    #cv2.imshow("Combined threshold images", red_hue_image)
+    cv2.imshow("LED positions", orig_image)
     
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

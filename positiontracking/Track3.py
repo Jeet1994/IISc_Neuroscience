@@ -1,47 +1,143 @@
-import cv2, math
+# USAGE : python motion_detector.py
+
+# import the necessary packages
 import numpy as np
+import cv2
 
-class ColourTracker:
-  def __init__(self):
-    cv2.namedWindow("ColourTrackerWindow", cv2.CV_WINDOW_AUTOSIZE)
-    self.capture = cv2.VideoCapture("motion.h264")
-    self.scale_down = 4
-  def run(self):
-    while True:
-      f, orig_img = self.capture.read()
-      orig_img = cv2.flip(orig_img, 1)
-      img = cv2.GaussianBlur(orig_img, (5,5), 0)
-      img = cv2.cvtColor(orig_img, cv2.COLOR_BGR2HSV)
-      img = cv2.resize(img, (len(orig_img[0]) / self.scale_down, len(orig_img) / self.scale_down))
-      red_lower = np.array([0, 150, 0],np.uint8)
-      red_upper = np.array([5, 255, 255],np.uint8)
-      red_binary = cv2.inRange(img, red_lower, red_upper)
-      dilation = np.ones((15, 15), "uint8")
-      red_binary = cv2.dilate(red_binary, dilation)
-      contours, hierarchy = cv2.findContours(red_binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
-      max_area = 0
-      largest_contour = None
-      for idx, contour in enumerate(contours):
-        area = cv2.contourArea(contour)
-        if area > max_area:
-          max_area = area
-          largest_contour = contour
-      if not largest_contour == None:
-        moment = cv2.moments(largest_contour)
-        #if moment["m00"] > 0/ self.scale_down:
-        rect = cv2.minAreaRect(largest_contour)
-        rect = ((rect[0][0] * self.scale_down, rect[0][1] * self.scale_down), (rect[1][0] * self.scale_down, rect[1][1] * self.scale_down), rect[2])
-        box = cv2.cv.BoxPoints(rect)
-        box = np.int0(box)
-        cv2.drawContours(orig_img,[box], 0, (0, 0, 255), 2)
-        cv2.imshow("ColourTrackerWindow", orig_img)
+"""
+Function to find the contour closest to the previous position of animals, 
+helps in faster processing of animal position
+"""
+def minimumDistanceContour(contours, center):
+    distances = []
+    for i in range(0,len(contours)):
+	distance = cv2.pointPolygonTest(contours[i], center, True)
+    	distances.append(np.fabs(distance))
+    index = distances.index(min(distances))
+    return index
+
+"""
+Function to track red color on the basis of hue value, 
+does a weighted summation of lower red hue range and 
+upper red hue range.
+"""	
+def hueBasedTracking(frame):
+    #useful for smoothening the images, median of all the pixels under kernel 
+    #area and central element is replaced with this median value. 
+    #highly effective against salt-and-pepper noise in the images.
+    frame = cv2.medianBlur(frame,5)
+
+    #convert color from BGR to HSV
+    hsv_image = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    
+    #define lower and upper limit of hue range for red color
+    lower_red_hue_range = cv2.inRange(hsv_image, np.array([0, 100, 100]), np.array([10, 255, 255]))
+    upper_red_hue_range = cv2.inRange(hsv_image, np.array([160, 100, 100]), np.array([179, 255, 255]))
+
+    #Calculates the weighted sum of two arrays.
+    red_hue_image = cv2.addWeighted(lower_red_hue_range, 1.0, upper_red_hue_range, 2.0, 0.0)
+    
+    #Blurs an image using a Gaussian filter
+    #The function convolves the source image with the specified Gaussian kernel
+    red_hue_image = cv2.GaussianBlur(red_hue_image, (9, 9), 2, 2)
+
+    #find contours in the red_hue_image formed after weighted adding of lower and upper ranges of red
+    cnts = cv2.findContours(red_hue_image.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
+    center = None
+
+    # only proceed if at least one contour was found
+    if len(cnts) > 0:
+	    # find the largest contour in the mask, then use it to compute the minimum enclosing circle and centroid
+	    c = max(cnts, key=cv2.contourArea)
+	    ((x, y), radius) = cv2.minEnclosingCircle(c)
+	    M = cv2.moments(c)
+	    #gives x and y coordinates of center
+	    center = (int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"]))
+    return center #returns the centroid for th image
+
+"""
+Function to perform background subtraction 
+"""
+def backGroundSubtraction(animalPosition, contours, frame):
+	#if no contours found, object is stable hence run hue based tracking 
+	if len(contours)==0:
+		animalPosition = hueBasedTracking(frame)
+	#if contour is found, then fing the index of closest contour 
+	else:
+		indexMinDistanceContour = minimumDistanceContour(contours, center)
+		for i in range(0,len(contours)):
+			distance = cv2.pointPolygonTest(contours[i], center, True) #find distance of all contours from animal position
+			#if animalposition is inside contour, then print center
+			if distance >= 0:
+				animalPosition = center
+			#else find the closest contour center to previous animal position
+			else:	
+				M = cv2.moments(contours[indexMinDistanceContour])
+				animalPosition = (int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"]))
+	return animalPosition
+
+
+camera = cv2.VideoCapture('Day13_CircularTrack_cam2_output_2016-08-10 15_36_08.064928.h264')
+
+animalPositionFile = open('Day13_CircularTrack_cam2_output_2016-08-10 15_36_08 064928.txt','w')
+
+# initialize the first frame in the video stream
+firstFrame = None
+animalPosition = None
+
+# loop over the frames of the video
+while True:
+	# grab the current frame
+	(grabbed, frame) = camera.read()
+	
+	# if the frame could not be grabbed, then we have reached the end of the video
+	if not grabbed:
+		break
+
+	# resize the frame, convert it to grayscale, and blur it
+	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         
-	if cv2.waitKey(20) == 27:
-          cv2.destroyWindow("ColourTrackerWindow")
-          self.capture.release()
-          break
+	gray = cv2.GaussianBlur(gray, (21, 21), 0)
+
+	# if the first frame is None, initialize it
+	if firstFrame is None:
+		firstFrame = gray
+		continue
+
+	# compute the absolute difference between the current frame and first frame
+	frameDelta = cv2.absdiff(firstFrame, gray)
 
 
-if __name__ == "__main__":
-  colour_tracker = ColourTracker()
-  colour_tracker.run()
+	thresh = cv2.adaptiveThreshold(frameDelta, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,11,2)
+	#thresh = cv2.threshold(frameDelta, 25, 255, cv2.THRESH_BINARY)[-1]
+
+	# dilate the thresholded image to fill in holes, then find contours on thresholded image
+	thresh = cv2.dilate(thresh, None, iterations=2)
+
+	#find contours 
+	(contours, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+	
+	position = None
+
+	center = hueBasedTracking(frame)
+
+	if animalPosition is None:
+		animalPosition = center
+
+	#if no movement or the animal is stable, no contours will be found
+	#then in that case use the hue based tracking code 
+	animalPosition = backGroundSubtraction(animalPosition, contours, frame)
+	print camera.get(1), animalPosition
+	
+	cv2.circle(frame, animalPosition, 5, (255,0,0), 2)
+	cv2.imshow('Tracking', frame)
+
+	# if the `q` key is pressed, break from the lop
+	if cv2.waitKey(1) & 0xFF == ord("q"):
+		break
+
+# cleanup the camera and close any open windows
+camera.release()
+cv2.destroyAllWindows()
+
+animalPositionFile.close()
