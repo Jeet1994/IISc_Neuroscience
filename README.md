@@ -18,12 +18,15 @@ Codes used by me during experiments at Dr Sachin Deshmukh's Lab:
     * random blink led 
     * rate map 
     * trajectory plots
+    * distance calculation 
 
 * Picameratimestamp: contains for picamera inter frame interval calibration with different types of settings
 
 * GPFA:  different methods for the Gaussian process model with Poisson observations.
 
 * piNeuralynx: python package for reading neural data from neuralynx recording system and calibrating it 
+
+* Nlx2mat: matlab package for analyzing neuralynx data. Picked from here: http://www.urut.ch/new/serendipity/index.php?/pages/nlxtomatlab.html
 
 * pistreamandrecord: allows to stream and record picamera over via web browser
 
