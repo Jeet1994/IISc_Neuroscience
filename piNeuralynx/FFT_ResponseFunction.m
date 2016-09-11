@@ -10,14 +10,18 @@
    [L,N] = size(x);
    %% Frequency specifications:
    dF = Fs/N;                      % hertz
-   f = -Fs/2:dF:Fs/2-dF;           % hertz
+   f = Fs*(0:(N/2))/N;          % hertz
    %% Fourier Transform:
-   X = fftshift(fft(x));   
+   Y = fft(x); 
+   P2 = abs(Y/N);
+   P1 = P2(1:N/2+1);
+   P1(2:end-1) = 2*P1(2:end-1);
    %% Plot the spectrum:
    figure;
-   plot(f,abs(X));
-   xlabel('Frequency (in hertz)');
-   title('Magnitude Response');
+   plot(f,P1)
+   title('FFT Plots')
+   xlabel('f (Hz)')
+   ylabel('Magnitude |P1(f)| (MicroVolts)')
    [name, r] = strtok(name, '.')
    savefig(name);
    close all;
