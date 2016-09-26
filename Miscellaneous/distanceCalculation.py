@@ -31,4 +31,4 @@ for filename in os.listdir(os.getcwd()):
                 
             distance.append(distancebwFrames)
         
-        sio.savemat('distance.mat', mdict={'distance':distance})
+         sio.savemat('distance.mat', mdict={'distance':distance})
