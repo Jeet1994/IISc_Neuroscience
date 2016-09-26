@@ -18,27 +18,21 @@ File contains data in this format:
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2
+import scipy.io as sio
 
-blank_image = np.zeros((640,640,3), np.uint8)
+blank_image = np.zeros((720,720,3), np.uint8)
 
-positionDataFile = open('ap1.txt', 'rb')
 positionData = []
 
-#read the data in positionData list
-for data in positionDataFile:
-    info = data.split(',')
-    preprocessed_x, preprocessed_y = info[0], info[1]
-    x,y = preprocessed_x.split('(')[1], preprocessed_y.split(')')[0]
-    if x=='None' and y==' None':
-        x,y = 0,0
-    else:
-        x,y = int(x), int(y)
-        
+pos = sio.loadmat('Day7_square_cam2_output_2016-08-04 16_46_12.639959.mat')
+x1 = pos['red_x'][0][38500:101000]
+y1 = pos['red_y'][0][38500:]
+for x,y in zip(x1,y1):
     positionData.append((x,y))
 
 #loop over the set of tracked pts
 for index in xrange(1, len(positionData)):
-    if index == len(positionData):
+    if index == len(positionData)-1:
         cv2.imwrite('trajectory.jpg',blank_image)
 
     #if either of the tracked pts are (0,0), ignore them
@@ -47,7 +41,7 @@ for index in xrange(1, len(positionData)):
     
     #otherwise, compute the thickness of the line and
 	# draw the connecting lines
-    print positionData[index - 1], positionData[index]
+    print index, positionData[index - 1], positionData[index]
     cv2.line(blank_image, positionData[index - 1], positionData[index], (0, 0, 255), 1)
  
     # show the frame to our screen
