@@ -23,10 +23,10 @@ for filename in os.listdir(os.getcwd()):
             if (red_x[i-1]==-1 or red_x[i]==-1):
                 distancebwFrames = -1
             else:
-                x_prev = red_x[i-1] + green_x[i-1]
-                y_prev = red_y[i-1] + green_y[i-1]
-                x_current = red_x[i] + green_x[i]
-                y_current = red_y[i] + green_y[i]
+                x_prev = (red_x[i-1] + green_x[i-1])/2.0
+                y_prev = (red_y[i-1] + green_y[i-1])/2.0
+                x_current = (red_x[i] + green_x[i])/2.0
+                y_current = (red_y[i] + green_y[i])/2.0
                 distancebwFrames = calculateDistance(x_prev, y_prev, x_current, y_current)
                 
             distance.append(distancebwFrames)
