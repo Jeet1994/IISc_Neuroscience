@@ -1,6 +1,7 @@
 # import the necessary packages
 import argparse
 import cv2
+import cv2.cv as cv
 import numpy as np
 import scipy.io as sio
  
@@ -103,6 +104,8 @@ def main():
  
     # load the video,and setup the mouse callback function
     cap = cv2.VideoCapture(args["video"])
+    width = cap.get(cv.CV_CAP_PROP_FRAME_WIDTH)
+    height = cap.get(cv.CV_CAP_PROP_FRAME_HEIGHT)
     if not cap.isOpened():
         print "Fatal Error: Could not open the specified file."
         exit(-1)
@@ -113,6 +116,10 @@ def main():
     while True:
         #read the vide frame by frame
         ret, frame = cap.read()
+
+	if frame is None:
+	    break
+
         frameClone = frame.copy()
  
         #display the frame and wait for a keypress
@@ -178,7 +185,7 @@ def main():
             if key == ord("q"):
                 break
 
-	print redLED[0], redLED[1], greenLED[0], greenLED[1]
+	#print redLED[0], redLED[1], greenLED[0], greenLED[1]
 
 	red_x.append(redLED[0])
 	red_y.append(redLED[1])
@@ -188,6 +195,6 @@ def main():
     # close all open windows
     cv2.destroyAllWindows()
 
-    sio.savemat("Pos.mat", mdict={'red_x':red_x, 'red_y':red_y, 'green_x':green_x, 'green_y':green_y})
+    sio.savemat("Day1_Pos.mat", mdict={'width':width,'height':height, 'red_x':red_x, 'red_y':red_y, 'green_x':green_x, 'green_y':green_y})
  
 main()
