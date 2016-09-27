@@ -24,7 +24,7 @@ blank_image = np.zeros((720,720,3), np.uint8)
 
 positionData = []
 
-pos = sio.loadmat('Day7_square_cam2_output_2016-08-04 16_46_12.639959.mat')
+pos = sio.loadmat('Day1_Pos.mat')
 x1 = pos['red_x'][0][38500:101000]
 y1 = pos['red_y'][0][38500:]
 for x,y in zip(x1,y1):
