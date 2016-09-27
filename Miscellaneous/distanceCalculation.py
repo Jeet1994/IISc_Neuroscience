@@ -22,6 +22,12 @@ for filename in os.listdir(os.getcwd()):
         for i in range(1,len(red_x)):
             if (red_x[i-1]==-1 or red_x[i]==-1):
                 distancebwFrames = -1
+            elif (red_x[i-1]!=-1 or red_x[i]!=-1) and (green_x[i-1]==-1 or green_x[i]==-1):
+                x_prev = red_x[i-1]
+                y_prev = red_y[i-1]
+                x_current = red_x[i]
+                y_current = red_y[i]
+                distancebwFrames = calculateDistance(x_prev, y_prev, x_current, y_current)
             else:
                 x_prev = (red_x[i-1] + green_x[i-1])/2.0
                 y_prev = (red_y[i-1] + green_y[i-1])/2.0
@@ -31,4 +37,5 @@ for filename in os.listdir(os.getcwd()):
                 
             distance.append(distancebwFrames)
         
-         sio.savemat('distance.mat', mdict={'distance':distance})
+        matFileName =  filename.split("_Pos.mat")[0] + "_distance.mat"
+        sio.savemat(matFileName, mdict={'distance':distance})

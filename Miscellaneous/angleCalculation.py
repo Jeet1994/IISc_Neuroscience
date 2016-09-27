@@ -6,6 +6,7 @@ Created on Fri Sep 09 14:22:22 2016
 
 import numpy as np
 import scipy.io as sio
+import os
 
 REFERENCE_VECTOR = np.array([0,200]) - np.array([0,0])
 
@@ -15,7 +16,7 @@ def headDirectionAngle(redLEDCoords, greenLEDCoords, referenceVector= REFERENCE_
     return np.degrees(angle)
         
 for filename in os.listdir(os.getcwd()):
-    if filename.endswith(".mat"):
+    if filename.endswith(".mat") and filename.startswith("Day"):
         anglebwLED = []
         
         data = sio.loadmat(filename)
@@ -30,5 +31,7 @@ for filename in os.listdir(os.getcwd()):
             else:
                 angle = -1
             anglebwLED.append(angle)
+            
+        matFileName =  filename.split("_Pos.mat")[0] + "_angle.mat"
     
-        sio.savemat('angle.mat', mdict={'angle':anglebwLED})
+        sio.savemat(matFileName, mdict={'angle':anglebwLED})
