@@ -9,7 +9,7 @@ def calculateDistance(x_prev, y_prev, x_next, y_next):
     return distance 
     
 for filename in os.listdir(os.getcwd()):
-    if filename.endswith(".mat"):
+    if filename.endswith("_Pos.mat") and filename.startswith("Day"):
         distance = []
         distance.append(0)
         
@@ -36,6 +36,8 @@ for filename in os.listdir(os.getcwd()):
                 distancebwFrames = calculateDistance(x_prev, y_prev, x_current, y_current)
                 
             distance.append(distancebwFrames)
+            
+        print filename, len(distance)
         
         matFileName =  filename.split("_Pos.mat")[0] + "_distance.mat"
         sio.savemat(matFileName, mdict={'distance':distance})

@@ -16,7 +16,7 @@ def headDirectionAngle(redLEDCoords, greenLEDCoords, referenceVector= REFERENCE_
     return np.degrees(angle)
         
 for filename in os.listdir(os.getcwd()):
-    if filename.endswith(".mat") and filename.startswith("Day"):
+    if filename.endswith("_Pos.mat") and filename.startswith("Day"):
         anglebwLED = []
         
         data = sio.loadmat(filename)
@@ -33,5 +33,7 @@ for filename in os.listdir(os.getcwd()):
             anglebwLED.append(angle)
             
         matFileName =  filename.split("_Pos.mat")[0] + "_angle.mat"
+        
+        print filename, len(anglebwLED)
     
         sio.savemat(matFileName, mdict={'angle':anglebwLED})
