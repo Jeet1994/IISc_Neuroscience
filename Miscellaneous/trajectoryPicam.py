@@ -15,7 +15,7 @@ def nearestDate(dates, pivot):
 Here is the example of time to pick:
 -* NOTICE  *-  16:26:25.503 - 0 - RealTimeClock::InitRealTimeClock() - CPU clock frequency for timestamp calculations is 3
  So MAIN_START_RECORDING = 16:26:25:503"""
-Neuralynx_Start_Time = '9:57:36.509'   #is in the form of HH:MM:SS.Microseconds
+Neuralynx_Start_Time = '16:26:25.503'   #is in the form of HH:MM:SS.Microseconds
 #Events File Name
 Events_File_Name = 'Events.nev'   
 #dictionary to hold events info from events.nev file
@@ -57,12 +57,14 @@ print "End Maze Time: %s \n"  % (EndMazeTime)
 #load the picamera date time from raw txt file and store it in a list
 for filename in os.listdir(os.getcwd()):
     if filename.endswith(".txt") and "timestamp" in filename:
-        with open(filename) as f:    
+        with open(filename) as f:  
+            StartTime = f.readline().rstrip('\n').split(',')[1].split(' ')[1]
+            StartTime = datetime.strptime(StartTime,'%H:%M:%S.%f').time()
+            StartTime = timedelta(hours=StartTime.hour, minutes=StartTime.minute, 
+                                 seconds=StartTime.second, microseconds=StartTime.microsecond)                  
             for line in f:
-                timestamp = line.rstrip('\n').split(',')[1].split(' ')[1]
-                timestamp = datetime.strptime(timestamp,'%H:%M:%S.%f').time()
-                timestamp = timedelta(hours=timestamp.hour, minutes=timestamp.minute, 
-                                 seconds=timestamp.second, microseconds=timestamp.microsecond)
+                timestamp = eval(line.rstrip('\n').split(',')[0])
+                timestamp = timedelta(microseconds=(float(timestamp)*1000)) + StartTime
                 piCameraTime.append(timestamp)
 
 #find the index and nearest value from the picamera time list to the start_time and end_time calculated above from nev file
@@ -71,8 +73,7 @@ piCameraEndMazeIndex, piCameraEndMazeTime = nearestDate(piCameraTime, EndMazeTim
 
 print "Picamera Start Maze Index: %s and corr. Time: %s" % (piCameraStartMazeIndex, piCameraStartMazeTime)
 print "Picamera End Maze Index: %s and corr. Time: %s" % (piCameraEndMazeIndex, piCameraEndMazeTime)
-
-             
+        
 for filename in os.listdir(os.getcwd()):
     if filename.endswith(".mat"):
         imageFileName = filename.split("_Pos.mat")[0] + "_trajectory.jpg"
@@ -105,6 +106,6 @@ for filename in os.listdir(os.getcwd()):
             # if the 'q' key is pressed, stop the loop
             if key == ord("q"):
 		    break
-      
-      #close any open windows
-	cv2.destroyAllWindows()
+        cv2.imwrite(imageFileName,blank_image)
+        #close any open windows
+	    cv2.destroyAllWindows()
