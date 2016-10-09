@@ -10,6 +10,20 @@ import lynxio
 import os
 import scipy.io as sio
 import pickle
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
+from scipy import ndimage as nd
+import matplotlib.cm as cm
+
+cdict = cm.get_cmap('jet')._segmentdata
+red = ((0.0,0,0), (0.0, 0, 0), (0.35, 0, 0), (0.66, 1, 1), (0.89, 1, 1), (1, 0.5, 0.5))
+blue = ((0.0,0,0), (0.0, 0.5, 0.5), (0.11, 1, 1), (0.34, 1, 1), (0.65, 0, 0), (1, 0, 0))
+green = ((0.0, 0, 0), (0.125, 0, 0), (0.375, 1, 1), (0.64, 1, 1), (0.91, 0, 0), (1, 0, 0))
+cdict['red'] = red
+cdict['green'] = green
+cdict['blue'] = blue
+cmap = LinearSegmentedColormap('name', cdict)
+
 
 #function to find the nearest value to a list
 def nearestDate(dates, pivot):
@@ -64,7 +78,7 @@ def rate_map(pos,spk,k=2):
 Here is the example of time to pick:
 -* NOTICE  *-  16:26:25.503 - 0 - RealTimeClock::InitRealTimeClock() - CPU clock frequency for timestamp calculations is 3
  So MAIN_START_RECORDING = 16:26:25:503"""
-Neuralynx_Start_Time = '14:21:34.913'   #is in the form of HH:MM:SS.Microseconds
+Neuralynx_Start_Time = '11:40:59.337'   #is in the form of HH:MM:SS.Microseconds
 #Events File Name
 Events_File_Name = 'Events.nev'   
 #dictionary to hold events info from events.nev file
@@ -125,7 +139,7 @@ piCameraEndMazeIndex, piCameraEndMazeTime = nearestDate(piCameraTime, EndMazeTim
 print "Picamera Start Maze Index: %s and corresponding Time: %s" % (piCameraStartMazeIndex, piCameraStartMazeTime)
 print "Picamera End Maze Index: %s and corresponding Time: %s" % (piCameraEndMazeIndex, piCameraEndMazeTime)
       
-data = sio.loadmat('Day17_Pos.mat')
+data = sio.loadmat('Day16_Pos.mat')
 red_x = list(data['red_x'][0])
 red_y = list(data['red_y'][0])
 Pos = {}
@@ -139,5 +153,8 @@ SpikeData = pickle.load(open(spikeFileName))
 print "\nSpike Data loaded"
 
 rateMap, spikeMap, occMap = rate_map(Pos,SpikeData)
+
+plt.imshow(rateMap, cmap=cmap)
+plt.colorbar()
 rateMapImageFile = 'rateMap_raw_' + spikeFileName
 pickle.dump([rateMap, spikeMap, occMap], open( rateMapImageFile, "wb" ) )
