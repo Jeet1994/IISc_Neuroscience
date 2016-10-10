@@ -1,5 +1,11 @@
 import scipy.io as sio
 import os 
+import cv2
+
+VIDEO_FILE_NAME = '******.h264'
+cap = cv2.VideoCapture(VIDEO_FILE_NAME)
+width = cap.get(3)
+height = cap.get(4)
 
 red_x = []
 red_y = []
@@ -7,7 +13,7 @@ green_x = []
 green_y = []
 
 for filename in os.listdir(os.getcwd()):
-    if filename.endswith(".txt"):
+    if filename.endswith("_Pos.txt"):
         f = open(filename)
         for line in f:
             line = line.rstrip("\n").split(" ")
@@ -20,4 +26,4 @@ for filename in os.listdir(os.getcwd()):
             
         matFileName = filename.split('.txt')[0] + '.mat'
             
-        sio.savemat(matFileName, mdict={'red_x': red_x, 'red_y': red_y, 'green_x':green_x, 'green_y': green_y})           
+        sio.savemat(matFileName, mdict={'width': width, 'height' : height,'red_x': red_x, 'red_y': red_y, 'green_x':green_x, 'green_y': green_y})           
