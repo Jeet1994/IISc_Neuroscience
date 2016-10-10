@@ -16,6 +16,8 @@ print "Directory:- " + DIRECTORY + "\n"
 for name in glob.glob(DIRECTORY + "/cl-maze[0-9]*.[0-9]"):
     if not name.endswith('.p'):
         spikeInfo = {} #spike firing time for each spike ID
+        MazeStartTime = -1
+        MazeEndTime = -1
         spikeDataFileName = str(name.split('\\')[1])
         print "Reading File:- " + spikeDataFileName
         spikeDataFile = open(name,'r')
@@ -26,11 +28,11 @@ for name in glob.glob(DIRECTORY + "/cl-maze[0-9]*.[0-9]"):
             #reads the startTime for the particluar cluster, can be improved by using length function
             elif lineIndex==11:
                 mazeStartTime = int(line)
-                spikeInfo['MazeStartTime'] = mazeStartTime
+                MazeStartTime = mazeStartTime
             #reads the endTime for the particluar cluster
             elif lineIndex==12:
                 mazeEndTime = int(line)
-                spikeInfo['MazeEndTime'] = mazeEndTime
+                MazeEndTime = mazeEndTime
             else:
                 line = line.rstrip('\n')
                 line = line.split(',')
@@ -41,11 +43,11 @@ for name in glob.glob(DIRECTORY + "/cl-maze[0-9]*.[0-9]"):
                 spikeInfo[spikeId] = spikeFiringTime
         
         #save the spike info related to particular cluster 
-        print "Maze Start Time: " + str(spikeInfo['MazeStartTime'])
-        print "Maze End Time: " + str(spikeInfo['MazeEndTime'])
+        print "Maze Start Time: " + str(MazeStartTime)
+        print "Maze End Time: " + str(MazeEndTime)
         spikeDataPickleFileName = spikeDataFileName + '.p'
         print "Saving File:- " + spikeDataPickleFileName
-        pickle.dump( spikeInfo, open( spikeDataPickleFileName, "wb" ) )
+        pickle.dump([spikeInfo, MazeStartTime, MazeEndTime], open( spikeDataPickleFileName, "wb"))
         print spikeDataPickleFileName + " File saved\n"
     else:
         continue

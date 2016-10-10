@@ -4,6 +4,7 @@ import lynxio
 import os
 import scipy.io as sio
 import cv2
+import rateMapUtils
 
 #function to find the nearest value to a list
 def nearestDate(dates, pivot):
@@ -11,11 +12,9 @@ def nearestDate(dates, pivot):
     minimum_index = dates.index(minimum)
     return minimum_index, minimum
     
-"""MAIN_START_RECORDING: stores the timestamps when Clock started for Neuralynx
-Here is the example of time to pick:
--* NOTICE  *-  16:26:25.503 - 0 - RealTimeClock::InitRealTimeClock() - CPU clock frequency for timestamp calculations is 3
- So MAIN_START_RECORDING = 16:26:25:503"""
-Neuralynx_Start_Time = '16:26:25.503'   #is in the form of HH:MM:SS.Microseconds
+#read the cheetah clock start time 
+CHEETAH_LOG_FILE_NAME = 'CheetahLogFile.txt'
+MAIN_NLX_CLOCK_START = rateMapUtils.getNeuralynxStartTime(CHEETAH_LOG_FILE_NAME)   #is in the form of HH:MM:SS.Microseconds
 #Events File Name
 Events_File_Name = 'Events.nev'   
 #dictionary to hold events info from events.nev file
@@ -28,9 +27,8 @@ EndMazeTime = -1
 #blank black image to draw trajcectory
 blank_image = np.zeros((720,720,3), np.uint8)
 
-#Neuralynx clock start time
-MAIN_NLX_CLOCK_START = datetime.strptime(Neuralynx_Start_Time,'%H:%M:%S.%f').time()
 #convert the main clock start time to timedelta object
+MAIN_NLX_CLOCK_START = datetime.strptime(MAIN_NLX_CLOCK_START,'%H:%M:%S.%f').time()
 MAIN_NLX_CLOCK_START = timedelta(hours=MAIN_NLX_CLOCK_START.hour, minutes=MAIN_NLX_CLOCK_START.minute, 
                                  seconds=MAIN_NLX_CLOCK_START.second, microseconds=MAIN_NLX_CLOCK_START.microsecond)
 print "Recording Start Time: %s \n" % (MAIN_NLX_CLOCK_START)
@@ -106,6 +104,4 @@ for filename in os.listdir(os.getcwd()):
             # if the 'q' key is pressed, stop the loop
             if key == ord("q"):
 		    break
-        cv2.imwrite(imageFileName,blank_image)
-        #close any open windows
-	    cv2.destroyAllWindows()
+        cv2.imwrite(imageFileName,blank_image); cv2.destroyAllWindows()

@@ -1,31 +1,108 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Mar 04 10:33:41 2016
+Created on Wed Oct 05 18:35:14 2016
 
 @author: rajat
 """
-import scipy.signal
 import numpy as np
-import scipy.io
+from datetime import timedelta, datetime
+import lynxio
+import os
+import scipy.io as sio
+import pickle
+import rateMapUtils
+   
+CHEETAH_LOG_FILE_NAME = 'CheetahLogFile.txt'
+NLX_START_TIME = rateMapUtils.getNeuralynxStartTime(CHEETAH_LOG_FILE_NAME)#'15:26:34.496'   #is in the form of HH:MM:SS.Microseconds
+#Events File Name
+EVENTS_FILE_NAME = 'Events.nev'   
+#picamera position data filename 
+PICAMERA_POSITION_FILE_NAME = 'Day13_Pos.mat'
+#winclust spike data filename 
+SPIKE_FILE_NAME = 'cl-maze1.1.UpdatedTimestamps.p'
+#raw rate map, spike map and occupancy map data
+RAW_MAP_FILE_NAME = 'rawMaps_' + SPIKE_FILE_NAME.split('.p')[0] + '.npy'
+#dictionary to hold events info from events.nev file
+events = {}
+#list which hold picamera Date time from the raw text file
+piCameraTime = []
+# start maze time and end maze time (will be noted from events file)
+StartMazeTime= -1
+EndMazeTime = -1
+
+#Neuralynx clock start time
+MAIN_NLX_CLOCK_START = datetime.strptime(NLX_START_TIME,'%H:%M:%S.%f').time()
+#convert the main clock start time to timedelta object
+MAIN_NLX_CLOCK_START = timedelta(hours=MAIN_NLX_CLOCK_START.hour, minutes=MAIN_NLX_CLOCK_START.minute, 
+                                 seconds=MAIN_NLX_CLOCK_START.second, microseconds=MAIN_NLX_CLOCK_START.microsecond)
+print "Recording Start Time: %s \n" % (MAIN_NLX_CLOCK_START)
+
+#load event timestamps, event names and Id from events.nev file
+eventTimestamps, eventId, nttl, eventNames = lynxio.loadNev(EVENTS_FILE_NAME)
+
+#save the events info in the dictionary initialized above with events timestamps as key and [name, timestamp timedelta object] as items
+for ts, eventName in zip(eventTimestamps, eventNames):
+    events[ts] = [eventName, timedelta(microseconds=int(ts))+ MAIN_NLX_CLOCK_START]
+
+#print each event stored in the .nev events file
+print "Events logged are: "
+for key in sorted(events.keys()):
+    print key, events[key]
+
+#assign the start and end maze time variable from the events dictionary, used to find index for picamera date time from raw txt file stored    
+StartMazeTime = events[np.uint64(raw_input("please enter the eventID for start Maze \n"))][1]
+EndMazeTime = events[np.uint64(raw_input("please enter the eventID for End Maze \n"))][1]
+ 
+print "\nStart Maze Time: %s"  % (StartMazeTime)   
+print "End Maze Time: %s \n"  % (EndMazeTime)
+
+#load the picamera date time from raw txt file and store it in a list
+for filename in os.listdir(os.getcwd()):
+    if filename.endswith(".txt") and "timestamp" in filename:
+        with open(filename) as f:  
+            StartTime = f.readline().rstrip('\n').split(',')[1].split(' ')[1]
+            StartTime = datetime.strptime(StartTime,'%H:%M:%S.%f').time()
+            StartTime = timedelta(hours=StartTime.hour, minutes=StartTime.minute, 
+                                 seconds=StartTime.second, microseconds=StartTime.microsecond)                  
+            for line in f:
+                timestamp = eval(line.rstrip('\n').split(',')[0])
+                timestamp = timedelta(microseconds=(float(timestamp)*1000)) + StartTime
+                piCameraTime.append(timestamp)
+
+#find the index and nearest value from the picamera time list to the start_time and end_time calculated above from nev file
+piCameraStartMazeIndex, piCameraStartMazeTime = rateMapUtils.nearestDate(piCameraTime, StartMazeTime)
+piCameraEndMazeIndex, piCameraEndMazeTime = rateMapUtils.nearestDate(piCameraTime, EndMazeTime)
+
+#find the index and nearest value from the picamera time list to the start_time and end_time calculated above from nev file
+piCameraStartMazeIndex, piCameraStartMazeTime = rateMapUtils.nearestDate(piCameraTime, StartMazeTime)
+piCameraEndMazeIndex, piCameraEndMazeTime = rateMapUtils.nearestDate(piCameraTime, EndMazeTime)
+
+print "Picamera Start Maze Index: %s and corresponding Time: %s" % (piCameraStartMazeIndex, piCameraStartMazeTime)
+print "Picamera End Maze Index: %s and corresponding Time: %s" % (piCameraEndMazeIndex, piCameraEndMazeTime)
+      
+#load the picamera position data
+piCameraData = sio.loadmat(PICAMERA_POSITION_FILE_NAME)
+red_x = list(piCameraData['red_x'][0])
+red_y = list(piCameraData['red_y'][0])
+#dicitonary to hold xpos, ypos, timestamp, width, height
+Pos = {}
+Pos['red_x'] = red_x[piCameraStartMazeIndex:piCameraEndMazeIndex]
+Pos['red_y'] = red_y[piCameraStartMazeIndex:piCameraEndMazeIndex]
+Pos['pos_t'] = piCameraTime[piCameraStartMazeIndex:piCameraEndMazeIndex]
+Pos['width'] = piCameraData['width'][0]
+Pos['height'] = piCameraData['height'][0]
+print "\nPosition Data loaded"
+
+# load the spikedata 
+SpikeData = pickle.load(open(SPIKE_FILE_NAME))
+print "\nSpike Data loaded"
+
+#get the raw rateMap, spikeMap and occupancy map
+rateMap, spikeMap, occMap = rateMapUtils.generateRateMap(Pos,SpikeData,k=1)
+
 import pylab as pl
-
-mat = scipy.io.loadmat('matlab.mat')
-
-t = 1 - np.abs(np.linspace(-1, 1, 21))
-kernel = t.reshape(21, 1) * t.reshape(1, 21)
-
-final = scipy.signal.convolve2d(mat['final_map'], kernel)
-occupancy = scipy.signal.convolve2d(mat['occupancy2'], kernel)
-spike_map = scipy.signal.convolve2d(mat['spike_map'], kernel)
-
-pl.pcolor(final)
+pl.imshow(rateMap)
 pl.colorbar()
-pl.show()
 
-pl.pcolor(occupancy)
-pl.colorbar()
-pl.show()
-
-pl.pcolor(spike_map)
-pl.colorbar()
-pl.show()
+#save the raw maps in .npy format
+np.save(RAW_MAP_FILE_NAME, [rateMap, spikeMap, occMap])
