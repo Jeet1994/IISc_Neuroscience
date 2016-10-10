@@ -69,8 +69,8 @@ def generateRateMap(pos,spk,k=5):
             posSpikeY.append(posy[y])
     
         #binnning on the basis of width and height defined along with K value
-        xbin_edges = np.arange(0,height,k)
-        ybin_edges = np.arange(0,width,k)
+        xbin_edges = np.arange(0,height+1,k)
+        ybin_edges = np.arange(0,width+1,k)
         spikeMap = np.histogram2d(posSpikeX, posSpikeY,  bins=(xbin_edges,ybin_edges))[0]
         occMap = np.histogram2d(posx, posy,  bins=(xbin_edges,ybin_edges))[0]
         #im_s[0][0] = 0.0
