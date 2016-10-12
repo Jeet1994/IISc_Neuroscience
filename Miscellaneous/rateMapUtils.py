@@ -7,8 +7,6 @@ Created on Monday Oct 10 12:55:58 2016
 """
 
 import numpy as np
-
-
 """fetches the nlx clock start time 
 MAIN_START_RECORDING: stores the timestamps when Clock started for Neuralynx
 Here is the example of time to pick:
@@ -19,7 +17,7 @@ def getNeuralynxStartTime(LogFileName):
     for lineIndex, line in enumerate(logFile):
         #Header data can be skipped for now but if someone wants to store, ONE CAN
         if lineIndex==20:
-            startTime = line[15:27]
+            startTime = str(line[15:27]) 
     return startTime
 
 #function to find the nearest value to a list of dates given pivot value
@@ -30,8 +28,10 @@ def nearestDate(dates, pivot):
 
 #function to return index of closest matching date to a list of dates given pivot value
 def find_id(dates, pivot):
+    dates = dates.tolist()
     minimum = min(dates, key=lambda x: abs(x - pivot))
     min_idx = dates.index(minimum)
+    #print minimum
     return min_idx
 
 #rateMap = spikeMap/occMap   

@@ -23,8 +23,10 @@ MAIN_NLX_CLOCK_START = timedelta(hours=MAIN_NLX_CLOCK_START .hour, minutes=MAIN_
 DIRECTORY = str(raw_input('Please enter the path to directory\n'))
 print "Directory:- " + DIRECTORY + "\n"
 
+print "Neuralynx Clock Start Time: " + str(MAIN_NLX_CLOCK_START)
+
 # iterates over files starting with "cl-maze"
-for name in glob.glob(DIRECTORY + "/cl-maze[0-9].[0-9].p"):
+for name in glob.glob(DIRECTORY + "/TT[0-9]*-cl-maze[0-9].[0-9].p"):
     #dictionary to hold the updated data
     spikeInfoUpdated = {}
     spikeTime = []
@@ -44,7 +46,7 @@ for name in glob.glob(DIRECTORY + "/cl-maze[0-9].[0-9].p"):
         #add the clock start time to maze start time and maze end time
         spikeInfoUpdated['MazeStartTime'] = MAIN_NLX_CLOCK_START  + timedelta(microseconds=MazeStartTime)
         spikeInfoUpdated['MazeEndTime'] = MAIN_NLX_CLOCK_START  + timedelta(microseconds=MazeEndTime) 
-        spikeInfoUpdated['SpikeTime'] = spikeTime
+        spikeInfoUpdated['SpikeTime'] = sorted(spikeTime)
         
         # save the updated spike data (timestamps as deltatimeobject) in a pickle file
         print "Maze Start Time: " + str(spikeInfoUpdated['MazeStartTime'])

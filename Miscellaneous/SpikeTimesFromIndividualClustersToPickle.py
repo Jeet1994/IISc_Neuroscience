@@ -13,7 +13,7 @@ DIRECTORY = str(raw_input('Please enter the path to directory\n'))
 print "Directory:- " + DIRECTORY + "\n"
 
 # iterates over files starting with "cl-maze"
-for name in glob.glob(DIRECTORY + "/cl-maze[0-9]*.[0-9]"):
+for name in glob.glob(DIRECTORY + "/TT[0-9]*-cl-maze[0-9]*.[0-9]"):
     if not name.endswith('.p'):
         spikeInfo = {} #spike firing time for each spike ID
         MazeStartTime = -1
