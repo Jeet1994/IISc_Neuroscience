@@ -25,13 +25,3 @@ if max(max(spikeMap))>0 %makesure that there is atleast 1 spike in the spike map
         end
     end
 end
-
-
-%changes so as to make unoccupied pixels white
-cmax = max(max(adapBinnedRateMap));
-if cmax > 0
-    cmin = -(cmax/60);
-else
-    cmin = -1;
-end
-adapBinnedRateMap(adapBinnedOccMap==0) = cmin; %setting the value of the unoccupied pixels just -ve enough to be the first color in the color map. this includes pixels with too few frames after adaptive binning, not just unoccupied pixels

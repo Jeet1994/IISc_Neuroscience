@@ -1,4 +1,4 @@
-function plotMapsFunction(datum, name)
+function plotMapsFunction(datum, name, samplingRate)
     %loading the ratemap, spikemap, occupancy map
     rateMap = datum.rateMap;
     spikeMap = datum.spikeMap; 
@@ -8,13 +8,13 @@ function plotMapsFunction(datum, name)
     %on lower and higher end of colormap
     cmp = [0 0 0; colormap(jet(256)); 1 1 1];
     
-    rateMap = (rateMap/33.31)*1000;
+    rateMap = (rateMap*samplingRate);
     cmaxRateMap = max(max(rateMap));
     newcminRateMap = -cmaxRateMap/63;
     rateMapwhite = cmaxRateMap + abs(newcminRateMap);
     rateMap(isnan(rateMap)) = rateMapwhite;
     
-    occMap = occMap*0.03331;
+    occMap = occMap/samplingRate;
     cmaxOccMap = max(max(occMap));
     newcminOccMap = -cmaxOccMap/63;
     occMapwhite = cmaxOccMap + abs(newcminOccMap);
@@ -24,7 +24,6 @@ function plotMapsFunction(datum, name)
     newcminSpikeMap = -cmaxSpikeMap/63;
     spikeMapwhite = cmaxSpikeMap + abs(newcminSpikeMap);
     spikeMapUpdated = spikeMap;
-    spikeMapUpdated(occMap==0)= 0;
     spikeMapUpdated(occMap==occMapwhite)= spikeMapwhite;
     spikeMap = spikeMapUpdated;
     
@@ -46,7 +45,7 @@ function plotMapsFunction(datum, name)
     title('Occupancy Map(secs)');
     [name, ~] = strsplit(name, '.UpdatedTimestamps.mat');
     name = [char(name{1,1})];
-    name = [name '.fig']
+    name = [name '.fig'];
     savefig(name);
     close all;
 end
