@@ -1,6 +1,4 @@
-function adapBinnedRateMap = calcAdaptive(spikeMap, occMap)
-samplingrate = 30; %frames/sec
-alpha = 0.0001; %change according to our experimental settings
+function adapBinnedRateMap = calcAdaptive(spikeMap, occMap, samplingRate, alpha)
 z = zeros(size(occMap)); %zero array of size = occMap size 
 adapBinnedRateMap = z; %adaptive binned rate map
 adapBinnedOccMap = z; %adapative binned occupancy map
@@ -16,17 +14,20 @@ if max(max(spikeMap))>0 %makesure that there is atleast 1 spike in the spike map
                 d(y, x) = 1; 
                 dists = bwdist(d); %distance transform..... ask Sachin about this??
                 [Nspikes Nocc] = mexAdaptwhile(spikeMap, alpha, Nocc, dists, occMap); %takes spikeMap, alpha, occupancy count, distance tranformation and occupancy map as input
-                if Nocc < 15 % < 0.5sec occupancy. both Skaggs and Jim use this cut off. though I think occupancy for this pixel needs to be set to zero, too. (can't see it done in Jim's code). sac 1/7/09. fixed occupancy issue: sac 1/19/09
+                if Nocc < 15 % < 0.5sec occupancy
                     adapBinnedRateMap(y, x) = 0;
                     adapBinnedOccMap(y, x) = 0;
                 else
-                    adapBinnedRateMap(y, x) = samplingrate * Nspikes/Nocc;
+                    adapBinnedRateMap(y, x) = samplingRate * Nspikes/Nocc;
                     adapBinnedOccMap(y, x) = Nocc;
                 end
             end
         end
     end
 end
+
+
+%changes so as to make unoccupied pixels white
 cmax = max(max(adapBinnedRateMap));
 if cmax > 0
     cmin = -(cmax/60);
