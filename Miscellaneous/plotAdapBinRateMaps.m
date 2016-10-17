@@ -1,4 +1,4 @@
-matFiles = dir('rawMaps*.mat');
+matFiles = dir('rawMaps*.UpdatedTimestamps.mat');
 [N,L] = size(matFiles);
 
 gwidth = 5;
@@ -43,7 +43,6 @@ for i = 1:N
     spikeMapUpdated(unvisited)= spikeMapwhite;
     spikeMap = spikeMapUpdated;
     
-    adapBinnedRateMap = adapBinnedRateMap*samplingRate;
     cmaxAdaptiveRateMap = max(max(adapBinnedRateMap));
     newcminAdaptiveRateMap = -cmaxAdaptiveRateMap/63;
     adaptiveRateMapwhite = cmaxAdaptiveRateMap + abs(newcminAdaptiveRateMap);
@@ -67,8 +66,10 @@ for i = 1:N
     colormap(cmp);
     colorbar;
     title('Occupancy Map(secs)');
-    name = [name '.fig'];
-    savefig(name);
+    savefile = sprintf('%s.abrmap.fig',name);
+    savefig(savefile);
+    %name = [name '_abr.fig'];
+    %savefig(name);
     close all;
 end
 

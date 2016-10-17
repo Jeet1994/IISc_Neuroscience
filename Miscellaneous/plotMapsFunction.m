@@ -32,7 +32,7 @@ function plotMapsFunction(datum, name, samplingRate)
     imagesc(rateMap);
     colormap(cmp);
     colorbar;
-    title('Rate Map(Hz)');
+    title('Rate Map');
     subplot(1,3,2);
     imagesc(spikeMap);
     colormap(cmp);
@@ -42,7 +42,7 @@ function plotMapsFunction(datum, name, samplingRate)
     imagesc(occMap);
     colormap(cmp);
     colorbar;
-    title('Occupancy Map(secs)');
+    title('Occupancy Map');
     [name, ~] = strsplit(name, '.UpdatedTimestamps.mat');
     name = [char(name{1,1})];
     name = [name '.fig'];
