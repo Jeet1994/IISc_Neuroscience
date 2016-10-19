@@ -24,12 +24,27 @@ for i = 1:N
     visited = find(occMap>0);
     
     adapBinnedRateMap = calcAdaptive(spikeMap,occMap, samplingRate, alpha);
-    adapBinnedRateMap = adapBinnedRateMap*30;
+    adapBinnedRateMap = adapBi
     
     [name, ~] = strsplit(matFiles(i).name, '.UpdatedTimestamps.mat');
     name = [char(name{1,1})];
     savefile = sprintf('%s.abrmap.mat',name);
     save(savefile,'adapBinnedRateMap');
+    
+    rawrmap = zeros(size(rawRateMap));
+    gaussrmap = zeros(size(rawRateMap));
+    rawrmap(visited) = (spikeMap(visited)*30)./occMap(visited);
+    gaussSpikeMap = imfilter(spikeMap,h,'same'); %gaussian filtered spkmap
+    gaussRateMap(visited) = (gaussSpikeMap(visited)*30)./gaussOccMap(visited); %taking the ratio of gaussian smoothed spk map and gaussian smoothed rate map takes care of lesser number of pixels used while smoothing pixels next to the unoccupied pixels.
+    cmaxGaussRateMap = max(max(gaussRateMap));
+    newcminGaussianRateMap = -cmaxGaussRateMap/63;
+    gaussianRateMapwhite = cmaxGaussRateMap + abs(newcminGaussianRateMap);
+    gaussRateMapUpdated = gaussRateMap;
+    gaussRateMapUpdated(unvisited)= gaussianRateMapwhite;
+    gaussRateMap = gaussRateMapUpdated;
+    savefile = sprintf('%s.gaussianrmap.mat',name);
+    save(savefile,'gaussRateMap');
+   
                             
     occMap = occMap/samplingRate;
     cmaxOccMap = max(max(occMap));
