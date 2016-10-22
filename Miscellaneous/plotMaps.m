@@ -1,4 +1,4 @@
-matFiles = dir('rawMaps*.mat');
+matFiles = dir('Day*.UpdatedTimestamps.mat');
 [N,L] = size(matFiles);
 samplingRate = 30; %frames/sec
 

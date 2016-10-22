@@ -14,7 +14,7 @@ if max(max(spikeMap))>0 %makesure that there is atleast 1 spike in the spike map
                 d(y, x) = 1; 
                 dists = bwdist(d); %distance transform..... ask Sachin about this??
                 [Nspikes Nocc] = mexAdaptwhile(spikeMap, alpha, Nocc, dists, occMap); %takes spikeMap, alpha, occupancy count, distance tranformation and occupancy map as input
-                if Nocc < 15 % < 0.5sec occupancy
+                if Nocc < 10 % < 0.5sec occupancy
                     adapBinnedRateMap(y, x) = 0;
                     adapBinnedOccMap(y, x) = 0;
                 else

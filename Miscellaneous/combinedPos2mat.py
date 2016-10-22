@@ -59,4 +59,4 @@ for pos in posData:
     red_x.append(int(pos_x))
     red_y.append(int(pos_y))
     
-sio.savemat("Day16_Pos.mat",mdict={'red_x':red_x, 'red_y':red_y})
+sio.savemat("Day21_Pos.mat",mdict={'red_x':red_x, 'red_y':red_y})
